@@ -1,2 +1,11 @@
 How do I make a release note?
 https://blog.bit.ai/writing-release-notes/
+
+Chrome 66 stops autoplay of all video that don't have the muted property. (https://stackoverflow.com/questions/50259734/video-autoplay-not-working-trying-to-find-a-fix)
+
+video {
+    object-fit: fill;
+}
+//to change the height of the vidoe when width 100%
+ other wise it will not working . (https://stackoverflow.com/questions/20127763/video-100-width-and-height)
+
