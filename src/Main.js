@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import Register from './components/Login/Register';
 import Navigation from './components/Navigation/Navigation';
 import NoMatch from './components/NoMatch/NoMatch';
+
 const Main = () => {
     return (
         <>
@@ -14,7 +15,7 @@ const Main = () => {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<NoMatch />} />
-            <Route path="/donors" element={<Donors />} />
+            <Route path="/donors" element={<Donors/>} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/log-in" element={<Login />} />
             <Route path="/register" element={<Register />} />
