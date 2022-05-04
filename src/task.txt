@@ -1,0 +1,2 @@
+How do I make a release note?
+https://blog.bit.ai/writing-release-notes/
