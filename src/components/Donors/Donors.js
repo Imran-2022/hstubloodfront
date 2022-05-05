@@ -18,15 +18,18 @@ const Donors = ({setLen} ) => {
     useEffect(() => {
         setLen(users.length);
     },[users.length])
+    const [group,setGroup]=useState("ALL")
     const filterImage=(fimage)=>{
         setFilterBlood(users)
         console.log("fimage",fimage);
+        setGroup(fimage)
         if(fimage==="ALL")
         {
             setFilterBlood(users)
         }
         else{
             const filterImages = users.filter((x)=>{
+                
                 return x.blood_Group===fimage;
         })
         setFilterBlood(filterImages)
@@ -64,11 +67,10 @@ const Donors = ({setLen} ) => {
         setPageNumber(selected);
     };
 
-
     return (
         <>
             <div className="catagories py-5 ms-5">
-                <label for="blood">Choose a BLOOD GROUP : </label>
+                <label for="blood">Choose a BLOOD GROUP : &nbsp;</label>
                 <select id="blood" name="bloodlist" onChange={(e)=>filterImage(e.target.value)}>
                     <option selected="selected" value="ALL">ALL</option>
                     <option value="A+">A+</option>
@@ -80,6 +82,7 @@ const Donors = ({setLen} ) => {
                     <option value="AB-">AB-</option>
                     <option value="O-">O-</option>
                 </select>
+                &nbsp; available donar for {group} : {filterblood.length}
             </div>
             <div className="App container py-5">
                 {displayUsers}
