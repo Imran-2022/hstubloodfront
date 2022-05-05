@@ -14,7 +14,7 @@ video {
     top: 0;
     left: 0;
     /* background: #06b7f7a3; we can set bg color , but not for this web*/ 
-    background:#010004;
+    background:#010004e1;
     width: 100%;
     height: 90vh !important;
     display: flex;

@@ -11,7 +11,7 @@ const Navigation = ({len}) => {
        <>
          <nav className="navbar navbar-expand-lg navbar-dark bg-primary py-3">
                 <div className="container">
-                    <Link className="nav-link text-light" to="/">BLOOD | HSTU</Link>
+                    <Link className="nav-link text-light" to="/">HSTU'<span style={{color:"rgb(255 211 0)",padding:"2px",fontWeight:"bolder"}}>blood</span>Share</Link>
                     <button className="navbar-toggler border border-info text-info" 
                     onClick={ ()=>{ setSuow(!show) } } >
                         {show ? "<MenuIcon />" : "<CloseIcon />"}
