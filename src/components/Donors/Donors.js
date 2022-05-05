@@ -14,6 +14,7 @@ const Donors = ({setLen} ) => {
     },[users.length])
     const [group,setGroup]=useState("ALL")
     const filterImage=(fimage)=>{
+        setPageNumber(0)
         setFilterBlood(users)
         console.log("fimage",fimage);
         setGroup(fimage)
