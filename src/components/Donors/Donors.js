@@ -3,15 +3,11 @@ import React, { useEffect, useState } from "react";
 import JsonData from "./FakeData.json";
 import ReactPaginate from "react-paginate";
 import "./Donors.css"
-const Donors = ({setLen} ) => {
+const Donors = () => {
     const [users, setUsers] = useState(JsonData.slice(0, 200));
     const [filterblood,setFilterBlood]=useState(users)
     // const allCatagories =["A+","A-","B+","B-","AB+","AB-","O+","O-","ALL"];
     const [pageNumber, setPageNumber] = useState(0);
-
-    useEffect(() => {
-        setLen(users.length);
-    },[users.length])
     const [group,setGroup]=useState("ALL")
     const filterImage=(fimage)=>{
         setPageNumber(0)
