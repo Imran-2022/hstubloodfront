@@ -1,0 +1,103 @@
+[
+    {
+        "name":"Md Imranul Haque",
+        "phone_Number":"01771207845",
+        "age" :"20",
+        "gender" :"male",
+        "blood_Group":"A+",
+        "Depertment":"CSE",
+        "label":"1",
+        "Semester":"II"
+    },
+    {
+        "name":"begum lorem ",
+        "phone_Number":"01771207845",
+        "age" :"20",
+        "gender" :"Female",
+        "blood_Group":"A+",
+        "Depertment":"CSE",
+        "label":"1",
+        "Semester":"II"
+    },
+    {
+        "name":"Md Imranul Haque",
+        "phone_Number":"01771207845",
+        "age" :"20",
+        "gender" :"male",
+        "blood_Group":"A-",
+        "Depertment":"CSE",
+        "label":"1",
+        "Semester":"II"
+    },
+    {
+        "name":"begum lorem ",
+        "phone_Number":"01771207845",
+        "age" :"20",
+        "gender" :"Female",
+        "blood_Group":"A+",
+        "Depertment":"CSE",
+        "label":"1",
+        "Semester":"II"
+    },
+    {
+        "name":"Md Imranul Haque",
+        "phone_Number":"01771207845",
+        "age" :"20",
+        "gender" :"male",
+        "blood_Group":"A+",
+        "Depertment":"CSE",
+        "label":"1",
+        "Semester":"II"
+    },
+    {
+        "name":"begum lorem ",
+        "phone_Number":"01771207845",
+        "age" :"20",
+        "gender" :"Female",
+        "blood_Group":"A-",
+        "Depertment":"CSE",
+        "label":"1",
+        "Semester":"II"
+    },
+    {
+        "name":"Md Imranul Haque",
+        "phone_Number":"01771207845",
+        "age" :"20",
+        "gender" :"male",
+        "blood_Group":"AB+",
+        "Depertment":"CSE",
+        "label":"1",
+        "Semester":"II"
+    },
+    {
+        "name":"Md Imranul Haque",
+        "phone_Number":"01771207845",
+        "age" :"20",
+        "gender" :"Female",
+        "blood_Group":"AB+",
+        "Depertment":"CSE",
+        "label":"1",
+        "Semester":"II"
+    },
+    {
+        "name":"Md Imranul Haque",
+        "phone_Number":"01771207845",
+        "age" :"20",
+        "gender" :"male",
+        "blood_Group":"A+",
+        "Depertment":"CSE",
+        "label":"1",
+        "Semester":"II"
+    },
+    {
+        "name":"begum lorem ",
+        "phone_Number":"01771207845",
+        "age" :"20",
+        "gender" :"Female",
+        "blood_Group":"A+",
+        "Depertment":"CSE",
+        "label":"1",
+        "Semester":"II"
+    }
+    
+]

@@ -2,7 +2,7 @@ import React from 'react';
 import "./Navigation.css"
 import { Link } from "react-router-dom";
 
-const Navigation = () => {
+const Navigation = ({len}) => {
     const [show,setSuow]=React.useState(true)
     return (
        <>
@@ -16,7 +16,7 @@ const Navigation = () => {
                         <div className={show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                            <Link className="nav-link text-light" to="/donors">DONORS <span className="donors-num px-2">00</span></Link>
+                            <Link className="nav-link text-light" to="/donors">DONORS <span className="donors-num px-2">{len||"0"}</span></Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link text-light" to="/donate">DONATE</Link>

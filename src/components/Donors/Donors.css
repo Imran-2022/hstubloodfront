@@ -1,11 +1,23 @@
-.App {
+.App{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 50px;
+    justify-content: center;
+    align-content: center;
+    min-height: 80vh;
+}
+.user{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
     display: flex;
     align-items: center;
+    flex-direction: column;
+}
+.App-pagination{
+    display: flex;
     justify-content: center;
-    /* flex-direction: column; */
-    flex-wrap: wrap;
-    width: 100%;
-  }
+    align-items: center;
+}
   
   .paginationBttns {
     width: 80%;
@@ -38,3 +50,8 @@
     color: grey;
     display: none;
   }
+.user-img{
+    width: 100px;
+    border-radius: 50%;
+
+}
