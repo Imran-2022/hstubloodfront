@@ -6,15 +6,9 @@ import "./Donors.css"
 const Donors = ({setLen} ) => {
     const [users, setUsers] = useState(JsonData.slice(0, 200));
     const [filterblood,setFilterBlood]=useState(users)
-    const allCatagories =["A+","A-","B+","B-","AB+","AB-","O+","O-","ALL"];
+    // const allCatagories =["A+","A-","B+","B-","AB+","AB-","O+","O-","ALL"];
     const [pageNumber, setPageNumber] = useState(0);
-    // useEffect(() => {
-    //     fetch('https://jsonplaceholder.typicode.com/photos')
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             setUsers(data.slice(0, 200))
-    //         })
-    // }, [])
+
     useEffect(() => {
         setLen(users.length);
     },[users.length])

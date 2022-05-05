@@ -4,7 +4,7 @@ import "./Home.css"
 const Home = () => {
     return (
         <div>
-            <video autoPlay={true} muted loop playsInline src="doocuments/RedBloodCellsVidevo.mov"></video>
+            <video autoPlay={true} muted loop playsInline src="doocuments/blood.mp4"></video>
             <div className="overlay-content ">
                 <p>
                     DONATING BLOOD IS ONE OF THE NOBLEST <br/> THINGS YOU CAN DO.
