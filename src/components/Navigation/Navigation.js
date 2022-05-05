@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./Navigation.css"
 import { Link } from "react-router-dom";
+import { userContext } from '../../Context/Context';
 
 const Navigation = ({len}) => {
     const [show,setSuow]=React.useState(true)
+    const [loggedInUser, setLoggedInUser] = useContext(userContext)
+
     return (
        <>
          <nav className="navbar navbar-expand-lg navbar-dark bg-primary py-3">
@@ -22,7 +25,10 @@ const Navigation = ({len}) => {
                                 <Link className="nav-link text-light" to="/donate">DONATE</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link text-light" to="/log-in">LOGIN</Link>
+                                {
+                                
+                                loggedInUser.email? <Link className="nav-link text-light" to="/user-profile">{loggedInUser.displayName.toUpperCase()}</Link>:<Link className="nav-link text-light" to="/sign-in">SIGN-IN</Link>
+                                }
                             </li>
                         </ul>
                     </div>
