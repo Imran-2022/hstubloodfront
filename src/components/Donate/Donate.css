@@ -1,0 +1,80 @@
+.form {
+    max-width: 500px;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.form h1 {
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(79, 98, 148);
+}
+
+
+.form p {
+    color: #bf1650;
+}
+
+.form p::before {
+    display: inline;
+    content: "⚠ ";
+}
+
+.form input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 2px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid rgb(122, 113, 113);
+}
+
+.form label {
+    line-height: 2;
+    text-align: left;
+    display: block;
+    margin-bottom: 13px;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.form button[type="submit"],
+.form input[type="submit"] {
+    background: #e005c7;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+
+.form button[type="submit"]:hover,
+.form input[type="submit"]:hover {
+    background: #bf1650;
+
+}
+
+/*  Hide Arrows From Input Number */
+/* Chrome, Safari, Edge, Opera */
+.form-number-mobile::-webkit-outer-spin-button,
+.form-number-mobile::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.form-number-mobile{
+    -moz-appearance: textfield;
+}
