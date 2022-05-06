@@ -90,7 +90,8 @@ select option:nth-child(2n) {
     margin-left: 20%;
     margin-bottom: -60px;
     margin-top: 50px;
-    padding: 10px;
     color: rgba(8, 36, 47, 0.148);
     font-size: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
