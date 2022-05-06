@@ -15,6 +15,8 @@ const Donate = () => {
 
                 <input defaultValue={loggedInUser.displayName ||"your Name"} {...register("Name", { required: true })}  autoComplete="off" readOnly/>
                 {errors.Name && <p>This field is required</p>}
+                <input defaultValue={loggedInUser.email ||"your email"} {...register("email", { required: true })}  autoComplete="off" readOnly/>
+                {errors.email && <p>This field is required</p>}
                 <input className="form-number-mobile" type='number' placeholder="Phone Number" {...register("mobile", { required: true })} />
                 {errors.mobile && <p>This field is required</p>}
                 <input type='number' min={18} placeholder="Your Age" {...register("age", { required: true })} />
