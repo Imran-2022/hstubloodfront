@@ -3,7 +3,9 @@ import "./Donate.css"
 import { useForm } from "react-hook-form";
 const Donate = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) => {
+        console.table(data)
+    };
     return (
         <>
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
