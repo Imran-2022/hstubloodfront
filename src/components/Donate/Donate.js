@@ -3,9 +3,11 @@ import "./Donate.css"
 import { useForm } from "react-hook-form";
 import { userContext } from '../../Context/Context';
 const Donate = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors },reset } = useForm();
     const onSubmit = (data) => {
         console.table(data)
+        alert("successfully submitted")
+        reset()
     };
     const [loggedInUser, setLoggedInUser] = useContext(userContext)
 
