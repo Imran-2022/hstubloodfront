@@ -78,3 +78,6 @@
 .form-number-mobile{
     -moz-appearance: textfield;
 }
+select option:nth-child(2n) {
+background: #ddd;
+}
