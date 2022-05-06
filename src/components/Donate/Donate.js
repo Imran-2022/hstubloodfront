@@ -13,6 +13,7 @@ const Donate = () => {
 
     return (
         <>
+        <p className="pp">every blood donor is a hero.</p>
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
 
                 <input defaultValue={loggedInUser.displayName ||"your Name"} {...register("Name", { required: true })}  autoComplete="off" readOnly/>
