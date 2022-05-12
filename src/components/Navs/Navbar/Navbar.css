@@ -1,7 +1,7 @@
 nav{
     height: 70px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding: 1rem 2rem;
     z-index: 100;
     position: sticky;
