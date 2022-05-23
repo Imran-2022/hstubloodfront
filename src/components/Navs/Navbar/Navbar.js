@@ -7,7 +7,7 @@ import { FaBars } from 'react-icons/fa'
 const Navbar = ({ toggle }) => {
     return (
         <nav>
-             <Link className="nav-link text-light" to="/">HSTU'<span style={{color:"rgb(255 211 0)",padding:"2px",fontWeight:"bolder"}}>blood</span>Share</Link>
+             <Link className="nav-link text-light" style={{fontSize:"25px"}} to="/">HSTU'<span style={{color:"rgb(255 211 0)",padding:"2px",fontWeight:"bolder"}}>blood</span>Share</Link>
             
             <div className="icons">
                 <div className="menu-items">

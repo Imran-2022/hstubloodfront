@@ -11,6 +11,14 @@ const navbarItems = [
         title: 'SIGN-IN',
         link: '/sign-in',
     },
+    {
+        title: 'CONTACT',
+        link: '/sign-in',
+    },
+    {
+        title: 'OUR-TEAM',
+        link: '/sign-in',
+    },
 ]
 
 export default navbarItems
