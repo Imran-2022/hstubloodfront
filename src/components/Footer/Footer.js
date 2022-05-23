@@ -81,7 +81,7 @@ const Footer = () => {
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
                             <div class="footer-widget">
-                                <img src="images/hstu_correct_logo.png" width="100%" height="370px" alt="hstu" />
+                                <img src="images/hstu_correct_logo.png" width="100%" style={{maxHeight:"370px"}} alt="hstu" />
                             </div>
                         </div>
                     </div>
