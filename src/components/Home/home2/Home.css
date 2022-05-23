@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+.readingbooks{
+    font-family: 'Macondo', cursive;
+}
+.readingbooksp{
+    font-family: 'Shadows Into Light', cursive;
+}
+.home{
+    height: 70vh;
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+.muted{
+    color: inherit !important;
+    text-decoration: inherit !important;
+}
+/* .text-danger {
+    --bs-text-opacity: 0.6 !important;
+    color: rgba(var(--bs-danger-rgb),var(--bs-text-opacity))!important;
+} */
+.text-whitee{
+    color: #ddd;
+}

@@ -1,0 +1,58 @@
+.testimonial .slick-arrow.slick-prev,
+.testimonial .slick-arrow.slick-next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  border-radius: 5px;
+}
+.testimonial .slick-prev::before,
+.testimonial .slick-next::before {
+  display: none;
+}
+.testimonial .slick-arrow.slick-next {
+  right: -70px;
+}
+.testimonial .slick-arrow.slick-prev {
+  left: -70px;
+}
+.testimonial .slick-dots li button:before {
+  font-size: 15px;
+}
+.testimonial .slick-dots li {
+  top: 15px;
+}
+
+h1 {
+    color: #fdfdfd;
+    font-size: 1.2rem !important;
+    text-align: left;
+    font-weight: 400;
+    margin: 3rem 0 0 0;
+  }
+  
+  h1 span {
+    font-size: 1.2rem !important;
+
+    color: #ff6200;
+  }
+.slick-dots {
+   padding-bottom: 20px !important;
+}
+.slick-dots li button:before {
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    color: #ff00a2 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

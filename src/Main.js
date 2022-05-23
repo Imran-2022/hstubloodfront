@@ -3,13 +3,13 @@ import { Routes, Route } from "react-router-dom";
 import Donate from './components/Donate/Donate';
 import Donors from './components/Donors/Donors';
 import Home from './components/Home/Home';
-import Navigation from './components/Navigation/Navigation';
 import NoMatch from './components/NoMatch/NoMatch';
 import JsonData from "./components/Donors/FakeData.json";
 import SignIn from './components/Login/SignIn';
 import SignUp from './components/Login/SignUp';
 import Navbar from "../src/components/Navs/Navbar/Navbar"
 import Sidebar from './components/Navs/Sidebar/Sidebar';
+import Footer from './components/Footer/Footer';
 const Main = () => {
     const [len,setLen]=useState(0);
     const [users, setUsers] = useState(JsonData.slice(0, 200));
@@ -33,8 +33,8 @@ const Main = () => {
             <Route path="/donate" element={<Donate />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUp />} />
-
         </Routes>
+        <Footer/>
         </>
 
     );
