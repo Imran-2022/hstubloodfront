@@ -3,7 +3,10 @@ import React, { useEffect, useState } from "react";
 import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import JsonData from "./FakeData.json";
 import ReactPaginate from "react-paginate";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./Donors.css"
+
 const Donors = () => {
     const [donors, setDonors] = useState([]);
     const [filterblood, setFilterBlood] = useState([])
@@ -18,11 +21,11 @@ const Donors = () => {
         }
         fetchData();
     }, [])
-    console.log(donors)
+    // console.log(donors)
 
-  
 
- 
+
+
     // const allCatagories =["A+","A-","B+","B-","AB+","AB-","O+","O-","ALL"];
     const [pageNumber, setPageNumber] = useState(0);
     const [group, setGroup] = useState("ALL")
@@ -47,6 +50,12 @@ const Donors = () => {
     const usersPerPage = 6;
     const pagesVisited = pageNumber * usersPerPage;
 
+    // copy to clipboard :
+    const notify = (num) => {
+        navigator.clipboard.writeText(num.innerText);
+        toast(`number copied  ${num.innerText}`)
+    };
+
     const displayUsers = filterblood
         .slice(pagesVisited, pagesVisited + usersPerPage)
         .map((user) => {
@@ -59,7 +68,19 @@ const Donors = () => {
                     }
                     <div>
                         <p>Name : {Name}</p>
-                        <p>Phone Number : {mobile}</p>
+                        <p>Phone Number : <span style={{ cursor: 'pointer', padding: "5px", background: "#ddd" }} onClick={(e) =>
+                            notify(e.target)}>{mobile}</span></p>
+                        <ToastContainer
+                            position="bottom-right"
+                            autoClose={1000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                        />
                         <p>age : {age}</p>
                         <p>blood-Group : {bloodGroup}</p>
                         <p>Depertment : {department}</p>
