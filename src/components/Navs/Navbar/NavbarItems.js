@@ -13,11 +13,11 @@ const navbarItems = [
     },
     {
         title: 'CONTACT',
-        link: '/sign-in',
+        link: '/contact-us',
     },
     {
         title: 'OUR-TEAM',
-        link: '/sign-in',
+        link: '/our-team',
     },
 ]
 

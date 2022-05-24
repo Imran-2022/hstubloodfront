@@ -1,0 +1,32 @@
+.contact-header{
+  height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("https://hstu.ac.bd/img/home/slider/Dr_M_A_Wazed_Building.jpg");
+  background-position: center;
+  background-size: cover;
+  color:#fff;
+  object-fit: cover;
+}
+
+.contact-col{
+  flex-basis: 48%;
+  margin-bottom: 30px;
+}
+
+.fab{
+  font-size: 28px;
+  color:#f44336;
+  margin: 10px;
+  margin-right: 30px;
+
+}
+
+
+.contact-col input, .contact-col textarea{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border:1 px solid #ccc;
+  outline: none;
+}
+

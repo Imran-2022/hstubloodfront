@@ -10,6 +10,8 @@ import SignUp from './components/Login/SignUp';
 import Navbar from "../src/components/Navs/Navbar/Navbar"
 import Sidebar from './components/Navs/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
+import OurTeam from './components/OurTeam/OurTeam';
+import Contact from './components/Contact/Contact';
 const Main = () => {
     const [len,setLen]=useState(0);
     const [users, setUsers] = useState(JsonData.slice(0, 200));
@@ -33,6 +35,8 @@ const Main = () => {
             <Route path="/donate" element={<Donate />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/our-team" element={<OurTeam />} />
+            <Route path="/contact-us" element={<Contact />} />
         </Routes>
         <Footer/>
         </>

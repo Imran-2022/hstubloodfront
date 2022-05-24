@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import Faq from '../Faq/Faq';
 import Testimonials from '../testimonials/Testimonials';
 import "./Home.css"
 import Home2 from './home2/Home2';
@@ -19,6 +20,7 @@ const Home = () => {
                 </div>
             </div>
             <Home2 />
+            <Faq/>
             <div className="p-4 bg-primary authorsays " style={{ backgroundImage: 'linear-gradient(rgba(6, 11, 37, 0.89), rgba(4, 9, 30, 0.92)), url(https://alifeofproductivity.com/wp-content/uploads/2016/09/bookRZ.jpg)' }}>
                 <div className="container pb-5">
                     <h1 className="pb-5">Here's what <span>STUDENTS</span> say ?</h1>

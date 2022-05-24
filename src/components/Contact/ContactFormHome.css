@@ -1,0 +1,13 @@
+.contact-form-home{
+    margin: 100px auto;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../../../public/images/hstu_correct_logo.png);
+    background-position:center;
+    background-size: cover;
+    padding: 100px 0;
+}
+
+@media(max-width: 700px){
+    .contact-home-H1{
+        font-size: 24px;
+    }
+}
