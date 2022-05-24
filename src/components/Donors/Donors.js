@@ -1,30 +1,45 @@
 import React, { useEffect, useState } from "react";
 // import JsonData from "./MOCK_DATA.json";
-import { BsFillArrowRightCircleFill,BsFillArrowLeftCircleFill} from 'react-icons/bs';
+import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import JsonData from "./FakeData.json";
 import ReactPaginate from "react-paginate";
 import "./Donors.css"
 const Donors = () => {
-    const [users, setUsers] = useState(JsonData.slice(0, 200));
-    const [filterblood,setFilterBlood]=useState(users)
+    const [donors, setDonors] = useState([]);
+    const [filterblood, setFilterBlood] = useState([])
+    // data from backend 
+    useEffect(() => {
+        async function fetchData() {
+            const res = await fetch("http://localhost:8080/donors");
+            const record = await res.json();
+            // setDonors(record.reverse())
+            setDonors(record)
+            setFilterBlood(record)
+        }
+        fetchData();
+    }, [])
+    console.log(donors)
+
+  
+
+ 
     // const allCatagories =["A+","A-","B+","B-","AB+","AB-","O+","O-","ALL"];
     const [pageNumber, setPageNumber] = useState(0);
-    const [group,setGroup]=useState("ALL")
-    const filterImage=(fimage)=>{
+    const [group, setGroup] = useState("ALL")
+    const filterImage = (fimage) => {
         setPageNumber(0)
-        setFilterBlood(users)
-        console.log("fimage",fimage);
+        setFilterBlood(donors)
+        console.log("fimage", fimage);
         setGroup(fimage)
-        if(fimage==="ALL")
-        {
-            setFilterBlood(users)
+        if (fimage === "ALL") {
+            setFilterBlood(donors)
         }
-        else{
-            const filterImages = users.filter((x)=>{
-                
-                return x.blood_Group===fimage;
-        })
-        setFilterBlood(filterImages)
+        else {
+            const filterImages = donors.filter((x) => {
+
+                return x.bloodGroup === fimage;
+            })
+            setFilterBlood(filterImages)
 
         }
     }
@@ -35,35 +50,39 @@ const Donors = () => {
     const displayUsers = filterblood
         .slice(pagesVisited, pagesVisited + usersPerPage)
         .map((user) => {
+            const { Name, age, bloodGroup, department, email, gender, label, mobile, semester, _id } = user
             return (
                 <div className="user">
                     {
-                        user.gender==='male' ? <img className="user-img m-3" src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg" alt="" /> :
-                        <img className="user-img m-3" src="https://images.squarespace-cdn.com/content/v1/5fcb3cc52842004a669af981/1645140221610-471VVD9CDBEI8PNO6A5Q/avatar-F-White.jpg" alt="" />
+                        user.gender === 'male' ? <img className="user-img m-3" src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg" alt="" /> :
+                            <img className="user-img m-3" src="https://images.squarespace-cdn.com/content/v1/5fcb3cc52842004a669af981/1645140221610-471VVD9CDBEI8PNO6A5Q/avatar-F-White.jpg" alt="" />
                     }
                     <div>
-                    <p>Name : {user.name}</p>
-                    <p>Phone Number : {user.phone_Number}</p>
-                    <p>age : {user.age}</p>
-                    <p>blood-Group : {user.blood_Group}</p>
-                    <p>Depertment : {user.Depertment}</p>
-                    <p>Label : {user.label} & Semester : {user.Semester}</p>
+                        <p>Name : {Name}</p>
+                        <p>Phone Number : {mobile}</p>
+                        <p>age : {age}</p>
+                        <p>blood-Group : {bloodGroup}</p>
+                        <p>Depertment : {department}</p>
+                        <p>Label : {label} & Semester : {semester}</p>
                     </div>
                 </div>
             );
         });
 
-    const pageCount = Math.ceil(users.length / usersPerPage);
+    const pageCount = Math.ceil(donors.length / usersPerPage);
 
     const changePage = ({ selected }) => {
         setPageNumber(selected);
     };
 
+    const handlePagination = () => {
+        window.scrollTo(0, 0);
+    }
     return (
         <>
             <div className="catagories py-5 ms-5">
                 <label for="blood">Choose a BLOOD GROUP : &nbsp;</label>
-                <select id="blood" name="bloodlist" onChange={(e)=>filterImage(e.target.value)}>
+                <select id="blood" name="bloodlist" onChange={(e) => filterImage(e.target.value)}>
                     <option selected="selected" value="ALL">ALL</option>
                     <option value="A+">A+</option>
                     <option value="B+">B+</option>
@@ -79,20 +98,20 @@ const Donors = () => {
             <div className="App container py-5">
                 {displayUsers}
             </div>
-            <div className="App-pagination">
-               {
-                   filterblood.length>6 &&  <ReactPaginate
-                   previousLabel={<BsFillArrowLeftCircleFill />}
-                   nextLabel={<BsFillArrowRightCircleFill/>}
-                   pageCount={pageCount}
-                   onPageChange={changePage}
-                   containerClassName={"paginationBttns"}
-                   previousLinkClassName={"previousBttn"}
-                   nextLinkClassName={"nextBttn"}
-                   disabledClassName={"paginationDisabled"}
-                   activeClassName={"paginationActive"}
-               />
-               }
+            <div className="App-pagination" onClick={() => handlePagination()}>
+                {
+                    filterblood.length > 6 && <ReactPaginate
+                        previousLabel={<BsFillArrowLeftCircleFill />}
+                        nextLabel={<BsFillArrowRightCircleFill />}
+                        pageCount={pageCount}
+                        onPageChange={changePage}
+                        containerClassName={"paginationBttns"}
+                        previousLinkClassName={"previousBttn"}
+                        nextLinkClassName={"nextBttn"}
+                        disabledClassName={"paginationDisabled"}
+                        activeClassName={"paginationActive"}
+                    />
+                }
             </div>
         </>
     );

@@ -7,7 +7,7 @@ import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 
 
 const PreviousBtn = (props) => {
-    console.log(props);
+    // console.log(props);
     const { className, onClick } = props;
     return (
         <div className={className} onClick={onClick}>
@@ -63,7 +63,7 @@ const Card = ({ img,text,name,department }) => {
             }}
         >
             <img
-                imgProps={{ style: { borderRadius: "50%" } }}
+                imgprops={{ style: { borderRadius: "50%" } }}
                 alt="img-client"
                 src={img}
                 style={{

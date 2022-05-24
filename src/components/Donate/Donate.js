@@ -1,13 +1,19 @@
 import React, { useContext } from 'react';
 import "./Donate.css"
 import { useForm } from "react-hook-form";
+import axios from 'axios'
 import { userContext } from '../../Context/Context';
 const Donate = () => {
     const { register, handleSubmit, formState: { errors },reset } = useForm();
     const onSubmit = (data) => {
         console.table(data)
-        alert("successfully submitted")
-        reset()
+        axios.post('http://localhost:8080/donors', data)
+        .then(res => {
+            if (res.data) {
+                alert("data added successfully !!!");
+                reset()
+            }
+        })
     };
     const [loggedInUser, setLoggedInUser] = useContext(userContext)
 
@@ -23,7 +29,7 @@ const Donate = () => {
                 {errors.mobile && <p>This field is required</p>}
                 <input type='number' min={18} placeholder="Your Age" {...register("age", { required: true })} />
                 {errors.age && <p>This field is required</p>}
-                <select {...register("blood-group")} className="p-1 mb-3" >
+                <select {...register("bloodGroup")} className="p-1 mb-3" >
                     <option value="A+">A+</option>
                     <option value="B+">B+</option>
                     <option value="AB+">AB+</option>
@@ -38,7 +44,7 @@ const Donate = () => {
                     <option value="male">male</option>
                     <option value="other">other</option>
                 </select>
-                <input placeholder="Your DepartMent" {...register("department", { required: true })} />
+                <input placeholder="Your DepartMent" {...register("department", { required: true })}  autoComplete="off"  />
                 {errors.department && <p>This field is required</p>}
                 <div> Label :
                 <select {...register("label")} defaultValue={'1'} className="m-1 px-5">

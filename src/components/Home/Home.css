@@ -15,7 +15,7 @@ video {
     left: 0;
     /* background: #06b7f7a3; we can set bg color , but not for this web*/ 
     /* background:#010004e1; */
-    background:linear-gradient(rgb(6 11 37 / 69%), rgb(4 9 30 / 60%)),url(http://localhost:3000/static/media/Dr_M_A_Wazed_Building.9881508ca8c04004d02a.jpg);
+    background:linear-gradient(rgb(6 11 37 / 69%), rgb(4 9 30 / 60%)),url(../../../public/images/Dr_M_A_Wazed_Building.jpg);
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: cover;

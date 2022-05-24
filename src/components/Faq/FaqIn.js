@@ -5,7 +5,7 @@ const FaqIn = (props) => {
     const handleClick = (id) => {
         setActive(!isActive)
     }
-    console.log(props)
+    // console.log(props)
     return (
         <div className="question-wrapper">
         <div style={{cursor: 'pointer'}} className='question'onClick={() => handleClick(props.id)} id={props.id}>
