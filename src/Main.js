@@ -13,35 +13,38 @@ import Footer from './components/Footer/Footer';
 import OurTeam from './components/OurTeam/OurTeam';
 import Contact from './components/Contact/Contact';
 const Main = () => {
-    const [len,setLen]=useState(0);
-    const [users, setUsers] = useState(JsonData.slice(0, 200));
-    useEffect(() => {
-        setLen(users.length);
-    },[users.length])
+  const [len, setLen] = useState(0);
+  const [users, setUsers] = useState(JsonData.slice(0, 200));
+  useEffect(() => {
+    setLen(users.length);
+  }, [users.length])
 
-    const [isopen, setisopen] = useState(false)
+  const [isopen, setisopen] = useState(false)
   const toggle = () => {
     setisopen(!isopen)
   }
-    return (
-        <>
-        {/* <Navigation len={len}/> */}
-        <Navbar toggle={toggle} />
-        <Sidebar isopen={isopen} toggle={toggle} />
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="*" element={<NoMatch />} />
-            <Route path="/donors" element={<Donors/>} />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/sign-in" element={<SignIn />} />
-            <Route path="/sign-up" element={<SignUp />} />
-            <Route path="/our-team" element={<OurTeam />} />
-            <Route path="/contact-us" element={<Contact />} />
-        </Routes>
-        <Footer/>
-        </>
 
-    );
+
+  // scroll to top 
+
+  return (
+    <>
+      {/* <Navigation len={len}/> */}
+      <Navbar toggle={toggle} />
+      <Sidebar isopen={isopen} toggle={toggle} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NoMatch />} />
+        <Route path="/donors" element={<Donors />} />
+        <Route path="/donate" element={<Donate />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/our-team" element={<OurTeam />} />
+        <Route path="/contact-us" element={<Contact />} />
+      </Routes>
+      <Footer />
+    </>
+  );
 };
 
 export default Main;

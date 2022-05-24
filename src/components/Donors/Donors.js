@@ -28,7 +28,7 @@ const Donors = () => {
 
         }
     }
-    console.log(filterblood)
+    // console.log(filterblood)
     const usersPerPage = 6;
     const pagesVisited = pageNumber * usersPerPage;
 
