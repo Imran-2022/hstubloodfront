@@ -1,6 +1,6 @@
 .form {
     max-width: 500px;
-    min-height: 90vh;
+    min-height: 91vh;
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -81,17 +81,4 @@
 
 select option:nth-child(2n) {
     background: #ddd;
-}
-
-.pp {
-    text-transform: uppercase;
-    transform: translate(30px, 20px) rotate(-20deg);
-    width: 340px;
-    margin-left: 20%;
-    margin-bottom: -60px;
-    margin-top: 50px;
-    color: rgba(8, 36, 47, 0.148);
-    font-size: 20px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
 }

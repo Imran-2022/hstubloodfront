@@ -4,32 +4,32 @@ import { FaFacebookSquare, FaLinkedin, FaTwitterSquare, FaYoutube } from "react-
 const Footer = () => {
     const year = new Date().getFullYear();
     return (
-        <footer class="footer-section">
-            <div class="container">
-                <div class="footer-cta pt-5 pb-5">
-                    <div class="row">
-                        <div class="col-xl-4 col-md-4 mb-30">
-                            <div class="single-cta">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div class="cta-text">
+        <footer className="footer-section">
+            <div className="container">
+                <div className="footer-cta pt-5 pb-5">
+                    <div className="row">
+                        <div className="col-xl-4 col-md-4 mb-30">
+                            <div className="single-cta">
+                                <i className="fas fa-map-marker-alt"></i>
+                                <div className="cta-text">
                                     <h4>Find us</h4>
                                     <span>HSTU, Dinajpur-5200, Bangladesh</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-4 mb-30">
-                            <div class="single-cta">
-                                <i class="fas fa-phone"></i>
-                                <div class="cta-text">
+                        <div className="col-xl-4 col-md-4 mb-30">
+                            <div className="single-cta">
+                                <i className="fas fa-phone"></i>
+                                <div className="cta-text">
                                     <h4>Call us</h4>
                                     <span>+880 1771207845</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-4 mb-30">
-                            <div class="single-cta">
-                                <i class="far fa-envelope-open"></i>
-                                <div class="cta-text">
+                        <div className="col-xl-4 col-md-4 mb-30">
+                            <div className="single-cta">
+                                <i className="far fa-envelope-open"></i>
+                                <div className="cta-text">
                                     <h4>Mail us</h4>
                                     <span>mdimranulhaque.202@gmail.com</span>
                                 </div>
@@ -37,17 +37,17 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div class="footer-content pt-5 pb-5">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-4 mb-50">
-                            <div class="footer-widget">
-                                <div class="footer-logo text-danger display-1">
+                <div className="footer-content pt-5 pb-5">
+                    <div className="row">
+                        <div className="col-xl-4 col-lg-4 mb-50">
+                            <div className="footer-widget">
+                                <div className="footer-logo text-danger display-1">
                                     HSTU
                                 </div>
-                                <div class="footer-text">
+                                <div className="footer-text">
                                     <p>Hajee Mohammad Danesh Science and Technology University is a government-financed public university of Bangladesh. Locally it is known as Hajee Danesh University.</p>
                                 </div>
-                                <div class="footer-social-icon">
+                                <div className="footer-social-icon">
                                     <span>Follow us</span>
                                     <a target="_blank" rel="noreferrer" href="https://www.facebook.com/imran.cse.hstu.20"><FaFacebookSquare /></a>
                                     <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCF7WyIjmmYdD1l3fp4egycQ/featured"><FaYoutube /></a>
@@ -56,9 +56,9 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                            <div class="footer-widget">
-                                <div class="footer-widget-heading">
+                        <div className="col-xl-4 col-lg-4 col-md-6 mb-30">
+                            <div className="footer-widget">
+                                <div className="footer-widget-heading">
                                     <h3>Useful Links</h3>
                                 </div>
                                 <ul>
@@ -79,24 +79,24 @@ const Footer = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
-                            <div class="footer-widget">
+                        <div className="col-xl-4 col-lg-4 col-md-6 mb-50">
+                            <div className="footer-widget">
                                 <img src="images/hstu_correct_logo.png" width="100%" style={{maxHeight:"370px"}} alt="hstu" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="copyright-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 text-center text-lg-left">
-                            <div class="copyright-text">
+            <div className="copyright-area">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xl-6 col-lg-6 text-center text-lg-left">
+                            <div className="copyright-text">
                                 <p>&copy; 2021 - {year} , Copyright & All Rights Reserved by HSTU <strong> ( HSTU'bloodShare ) </strong></p>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 d-none d-lg-block text-center">
-                            <div class="footer-menu">
+                        <div className="col-xl-6 col-lg-6 d-none d-lg-block text-center">
+                            <div className="footer-menu">
                                 <ul>
                                     <li><a target="_blank" rel="noreferrer"href="https://www.linkedin.com/in/md-imranul-haque/">CREATED BY @ MD IMRANUL HAQUE </a></li>
                                 </ul>

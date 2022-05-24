@@ -1,6 +1,7 @@
 .App{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    /* grid-template-columns: repeat(3,1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 50px;
     justify-content: center;
     align-content: center;
@@ -15,45 +16,51 @@
     flex-direction: column;
     border-radius: 3px;
 }
-.App-pagination{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-  
-  .paginationBttns {
-    width: 80%;
-    height: 40px;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .paginationBttns a {
-    padding: 10px;
-    margin: 8px;
-    border-radius: 5px;
-    border: 1px solid #2b2eff;
-    color: #2b2eff;
-    cursor: pointer;
-  }
-  
-  .paginationBttns a:hover {
-    color: white;
-    background-color: #2b2eff;
-  }
-  
-  .paginationActive a {
-    color: white;
-    background-color: #2b2eff;
-  }
-  
-  .paginationDisabled a {
-    color: grey;
-    display: none;
-  }
+
 .user-img{
     width: 100px;
     border-radius: 50%;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+/* pagination */
+
+.App-pagination{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paginationBttns {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 20px;
+  border: 1px solid #2b2eff;
+  color: #2b2eff;
+  cursor: pointer;
+}
+
+
+
+.paginationActive a {
+  color: white;
+  background-color: #2b2eff;
+}
+
+.paginationDisabled a {
+  color: grey;
+  display: none;
+}
+.nextBttn, .previousBttn{
+  outline: none !important;
+  border: none !important;
+  font-size: 20px;
 }

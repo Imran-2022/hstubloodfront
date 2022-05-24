@@ -5,7 +5,7 @@ import Questions from "./Questions"
 const Faq = () => {
     const [question, setQustion] = useState(Questions);
     return (
-        <div className='container'>
+        <div className='container faqq'>
             <h2 className='mt-5'>Common FAQ</h2>
             <div className='faq'>
                 {question.map((item, idx) => <FaqIn idx={idx} question={item.question} answer={item.answer} />)}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import JsonData from "./MOCK_DATA.json";
+import { BsFillArrowRightCircleFill,BsFillArrowLeftCircleFill} from 'react-icons/bs';
 import JsonData from "./FakeData.json";
 import ReactPaginate from "react-paginate";
 import "./Donors.css"
@@ -81,8 +82,8 @@ const Donors = () => {
             <div className="App-pagination">
                {
                    filterblood.length>6 &&  <ReactPaginate
-                   previousLabel={"Previous"}
-                   nextLabel={"Next"}
+                   previousLabel={<BsFillArrowLeftCircleFill />}
+                   nextLabel={<BsFillArrowRightCircleFill/>}
                    pageCount={pageCount}
                    onPageChange={changePage}
                    containerClassName={"paginationBttns"}

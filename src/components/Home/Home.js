@@ -27,6 +27,9 @@ const Home = () => {
                 </div>
                 <Testimonials />
             </div>
+            <div style={{minHeight:"70vh"}}>
+
+            </div>
         </>
     );
 };
