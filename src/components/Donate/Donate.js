@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "./Donate.css"
 import { useForm } from "react-hook-form";
 import axios from 'axios'
@@ -16,7 +16,17 @@ const Donate = () => {
         })
     };
     const [loggedInUser, setLoggedInUser] = useContext(userContext)
+    const [profile, setProfile] = useState({});
 
+    useEffect(() => {
+        async function fetchData() {
+            const res = await fetch("http://localhost:8080/donors");
+            const record = await res.json();
+            const user = record.filter(dt => dt.email === loggedInUser.email)
+            setProfile(...user)
+        }
+        fetchData();
+    }, [])
     return (
         <>
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
@@ -59,7 +69,7 @@ const Donate = () => {
                     <option value="II">II</option>
                 </select>
                 </div>
-                <input className="my-3" type="submit" value="REQUEST TO DONATE" />
+                { profile.email? <input className="my-3 disabled" type="submit" value="REQUEST TO DONATE" disabled/>: <input className="my-3" type="submit" value="REQUEST TO DONATE" />}
             </form>
         </>
     );

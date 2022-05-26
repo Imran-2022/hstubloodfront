@@ -1,0 +1,120 @@
+ /* react hook form style  */
+ 
+
+ .admin-form-adds input,textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid rgb(228, 20, 20);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .admin-form-adds label {
+    line-height: 2;
+    text-align: left;
+    display: block;
+    margin-bottom: 13px;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+  }
+  
+  .admin-form-adds button[type="submit"],
+  input[type="submit"] {
+    background: #0d6efd;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 40px;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+  
+
+  
+  .admin-form-adds button[type="submit"]:active,
+  input[type="button"]:active,
+  input[type="submit"]:active {
+    transition: 2s all;
+    transform: translateY(3px);
+    border: 1px solid transparent;
+    opacity: 0.8;
+  }
+  
+  .admin-form-adds input:disabled {
+    opacity: 0.4;
+  }
+  
+  .admin-form-adds input[type="button"]:hover {
+    transition: 0.3s all;
+  }
+  
+  .admin-form-adds button[type="submit"],
+  input[type="button"],
+  input[type="submit"] {
+    -webkit-appearance: none;
+  }
+  
+  .App {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .admin-form-adds button[type="button"] {
+    display: block;
+    appearance: none;
+    background: #333;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  
+  .admin-form-adds hr {
+    margin-top: 30px;
+  }
+  
+  .admin-form-adds button {
+    display: block;
+    appearance: none;
+    margin-top: 40px;
+    border: 1px solid #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  
+
+  /* my style code  */
+
+  .admin-form-add{
+    min-height: 80vh;
+   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+.admin-form-add input,textarea{
+    outline: none;
+    border: 1px solid transparent;
+    border-bottom: 1px solid;
+    padding-left: 0px;
+}
+
+
+/* hide input type number  */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,42 @@
+
+table {
+    margin-top: 70px;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+ table td, th {
+    border: 1px solid #3c05ee;
+    text-align: left;
+    padding: 4px;
+    margin-bottom: 5px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.btnmanage{
+    cursor: pointer;
+
+}
+
+.div22{
+    width: 50%;
+} 
+.div22 img{
+    width: 100%;
+}
+.update form{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+
+}
+form input{
+    outline: none;
+    padding: 20px;
+    font-size: 20px;
+
+}
+

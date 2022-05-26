@@ -12,6 +12,10 @@ import Sidebar from './components/Navs/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 import OurTeam from './components/OurTeam/OurTeam';
 import Contact from './components/Contact/Contact';
+import UserProfile from './components/UserProfile/UserProfile';
+import Admin from './components/DonarManageMent/Admin/Admin';
+import Request from './components/Request/Request';
+import PrivateRoute from './PrivateRoute';
 const Main = () => {
   const [len, setLen] = useState(0);
   const [users, setUsers] = useState(JsonData.slice(0, 200));
@@ -36,10 +40,14 @@ const Main = () => {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NoMatch />} />
         <Route path="/donors" element={<Donors />} />
-        <Route path="/donate" element={<Donate />} />
+        {/* <Route path="/donate" element={<Donate />} /> */}
+        <Route path="/donate" element={<PrivateRoute><Donate /></PrivateRoute>} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/donors-request" element={<Request />} />
         <Route path="/our-team" element={<OurTeam />} />
+        <Route path="/managing-team" element={<Admin />} />
+        <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/contact-us" element={<Contact />} />
       </Routes>
       <Footer />

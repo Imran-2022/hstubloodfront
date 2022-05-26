@@ -19,6 +19,10 @@ const navbarItems = [
         title: 'OUR-TEAM',
         link: '/our-team',
     },
+    {
+        title: 'MANAGING-TEAM',
+        link: '/managing-team',
+    },
 ]
 
 export default navbarItems
