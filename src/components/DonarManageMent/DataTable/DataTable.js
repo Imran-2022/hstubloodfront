@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./DataTable.css"
 import { ToastContainer, toast } from 'react-toastify';
@@ -29,6 +29,20 @@ const DataTable = () => {
                     toast(`STATUS UPDATED`)
                 }
             })
+    }
+    const deleteAllRequest=()=>{
+            async function fetchData() {
+                const res = await fetch("http://localhost:8080/request",{
+                    method: 'DELETE',
+                });
+                const record = await res.json();
+                console.log(record)
+                if(record){
+                    alert("delected all !!")
+                    setData([])
+                }
+            }
+            fetchData();
     }
 
     return (
@@ -82,6 +96,9 @@ const DataTable = () => {
                         }).reverse()
                     }
                 </table>
+                {
+                    data.length ? <button className="btn btn-primary w-100 p-3 mt-3"onClick={deleteAllRequest}>Delete All</button>:<p></p>
+                }
             </div>
         </div>
     );
