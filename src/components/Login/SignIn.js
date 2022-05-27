@@ -4,8 +4,10 @@ import "./Sign.css"
 import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import initialAuth from '../../Firebase/InitializeFirebase';
 import { userContext } from '../../Context/Context';
+import { useLocation, useNavigate } from "react-router";
 const SignIn = () => {
-
+    const navigate = useNavigate();
+    const location = useLocation();
     const [loggedInUser, setLoggedInUser] = useContext(userContext)
  
 
@@ -25,6 +27,9 @@ const SignIn = () => {
                 setLoggedInUser({ email, displayName })
                 // ...
                 alert("signIn successful")
+                if (location.state?.from) {
+                    navigate(location.state.from);
+                  }
             })
             .catch((error) => {
                 alert(error.message)

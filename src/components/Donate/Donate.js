@@ -69,7 +69,7 @@ const Donate = () => {
                     <option value="II">II</option>
                 </select>
                 </div>
-                { profile.email? <input className="my-3 disabled" type="submit" value="REQUEST TO DONATE" disabled/>: <input className="my-3" type="submit" value="REQUEST TO DONATE" />}
+              <input className="my-3" type="submit" value="REQUEST TO DONATE" />
             </form>
         </>
     );

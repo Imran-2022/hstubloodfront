@@ -33,22 +33,22 @@ const Main = () => {
 
   return (
     <>
-      {/* <Navigation len={len}/> */}
       <Navbar toggle={toggle} />
       <Sidebar isopen={isopen} toggle={toggle} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NoMatch />} />
         <Route path="/donors" element={<Donors />} />
-        {/* <Route path="/donate" element={<Donate />} /> */}
-        <Route path="/donate" element={<PrivateRoute><Donate /></PrivateRoute>} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/donors-request" element={<Request />} />
         <Route path="/our-team" element={<OurTeam />} />
-        <Route path="/managing-team" element={<Admin />} />
-        <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/contact-us" element={<Contact />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/donors-request" element={<Request />} />
+          <Route path="/donate" element={<Donate />} />
+          <Route path="/managing-team" element={<Admin />} />
+          <Route path="/user-profile" element={<UserProfile />} />
+        </Route>
       </Routes>
       <Footer />
     </>

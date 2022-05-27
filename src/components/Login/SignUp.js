@@ -1,53 +1,59 @@
 import React, { useRef, useState } from 'react';
-import { Link, useLocation,Navigate } from 'react-router-dom';
+import { Link, useLocation, Navigate } from 'react-router-dom';
 import "./Sign.css"
-import { getAuth, createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import initialAuth from '../../Firebase/InitializeFirebase';
+import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
-   const [userData,setUserData]=useState({});
-   initialAuth() 
+    const navigate = useNavigate();
+    const [userData, setUserData] = useState({});
+    initialAuth()
     const auth = getAuth();
     const userName = useRef("");
     const userEmail = useRef("");
     const userPassword = useRef("");
     const comfirmPassword = useRef("");
-    
+
     const handleSignUp = (e) => {
         e.preventDefault();
-    // console.log(userEmail.current.value,userPassword.current.value,comfirmPassword.current.value)
-        if(userPassword.current.value===comfirmPassword.current.value){
+        // console.log(userEmail.current.value,userPassword.current.value,comfirmPassword.current.value)
+        if (userPassword.current.value === comfirmPassword.current.value) {
             createUserWithEmailAndPassword(auth, userEmail.current.value, userPassword.current.value)
-            .then((userCredential) => {
-                updateUser();
-                const user= userCredential.user.email;
-                // console.log(user)
-                setUserData({email:user})
-                // if (user) {console.log(JSON.stringify(user))};
-                alert("signUp successful")
-            })
-            .catch((error) => {
-                const errorMessage = error.message;
-                alert(errorMessage)
-            });
+                .then((userCredential) => {
+                    updateUser();
+                    const user = userCredential.user.email;
+                    // console.log(user)
+                    setUserData({ email: user })
+                    // if (user) {console.log(JSON.stringify(user))};
+                    alert("signUp successful")
+                    setTimeout(() => {
+                        navigate(-1)
 
-        }else{
-           alert("comfirm password' must be carbon copy of your password 😅")
+                    }, "2000")
+                })
+                .catch((error) => {
+                    const errorMessage = error.message;
+                    alert(errorMessage)
+                });
+
+        } else {
+            alert("comfirm password' must be carbon copy of your password 😅")
         }
 
     }
 
-    const updateUser=() => {
+    const updateUser = () => {
         updateProfile(auth.currentUser, {
             displayName: `${userName.current.value}`
-          }).then(() => {
-              setUserData({...userData,name:auth.currentUser.displayName})
+        }).then(() => {
+            setUserData({ ...userData, name: auth.currentUser.displayName })
             // console.log("display name: " + auth.currentUser.displayName); 
-          }).catch((error) => {
+        }).catch((error) => {
             alert(error)
-          });
+        });
     }
 
-    userData.name&& console.log(userData)
+    userData.name && console.log(userData)
     return (
         <>
             <div className=" m-auto w-100 mt-4">
@@ -72,7 +78,7 @@ const SignUp = () => {
                         <label>Comfirm Password</label>
                         <input ref={comfirmPassword} type="password" className="form-control mb-2" placeholder="Enter password" />
                     </div>
-                    <button  className="btn btn-primary btn-block">Sign Up</button>
+                    <button className="btn btn-primary btn-block">Sign Up</button>
                     <p className="forgot-password text-right pt-2">
                         Already registered <Link to="/sign-in">sign in?</Link>
                     </p>
