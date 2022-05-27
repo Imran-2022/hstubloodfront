@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import BeATeamMemeber from '../DonarManageMent/BeATeamMemeber/BeATeamMemeber';
 import Faq from '../Faq/Faq';
 import Testimonials from '../testimonials/Testimonials';
 import "./Home.css"
@@ -27,9 +28,7 @@ const Home = () => {
                 </div>
                 <Testimonials />
             </div>
-            <div style={{minHeight:"70vh"}}>
-
-            </div>
+            <BeATeamMemeber/>
         </>
     );
 };

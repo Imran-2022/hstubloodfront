@@ -1,0 +1,11 @@
+.admin-form-addd{
+    min-height: 40vh;
+   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+
+}
+.admin-form-addd input,textarea{
+    outline: none;
+    border: 1px solid transparent;
+    border-bottom: 1px solid;
+    padding-left: 0px;
+}

@@ -18,7 +18,7 @@ const Admin = () => {
                         <TabList id="myDIV" className="d-flex w-50 pt-5 justify-content-between">
                             <Tab className="btn btn-outline-danger text-light active">ALL BLOOD REQUEST</Tab>
                             <Tab className="btn btn-outline-danger text-light ">MANAGEMENT TEAM</Tab>
-                            <Tab className="btn btn-outline-danger text-light">MAKE ADMIN</Tab>
+                            <Tab className="btn btn-outline-danger text-light">MAKE A PART</Tab>
                         </TabList>
                     </div>
                     <div className="container">
