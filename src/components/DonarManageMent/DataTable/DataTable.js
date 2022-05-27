@@ -30,19 +30,20 @@ const DataTable = () => {
                 }
             })
     }
-    const deleteAllRequest=()=>{
-            async function fetchData() {
-                const res = await fetch("http://localhost:8080/request",{
-                    method: 'DELETE',
-                });
-                const record = await res.json();
+    const deleteAllRequest = () => {
+        async function fetchData() {
+            const res = await fetch("http://localhost:8080/request", {
+                method: 'DELETE',
+            });
+            const record = await res.json();
+            if (record.deletedCount) {
                 console.log(record)
-                if(record){
-                    alert("delected all !!")
-                    setData([])
-                }
+                toast(`All done request deleted`)
+            } else {
+                toast("have no done request to delete !")
             }
-            fetchData();
+        }
+        fetchData();
     }
 
     return (
@@ -97,8 +98,19 @@ const DataTable = () => {
                     }
                 </table>
                 {
-                    data.length ? <button className="btn btn-primary w-100 p-3 mt-3"onClick={deleteAllRequest}>Delete All</button>:<p></p>
+                    data.length ? <button className="btn btn-primary w-100 p-3 mt-5" onClick={deleteAllRequest}>Delete All done request</button> : <p></p>
                 }
+                <ToastContainer
+                    position="top-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
             </div>
         </div>
     );
