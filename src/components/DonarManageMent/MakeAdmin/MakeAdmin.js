@@ -22,12 +22,28 @@ const MakeAdmin = () => {
             .then(data => setrequestToBeApart(data));
     }, [])
 
+
+    const handleDelete = (id) => {
+        console.log(id)
+            fetch(`http://localhost:8080/beAPart/${id}`, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())// or res.text()) 
+                .then(res => {
+                    if (res.deletedCount === 1) {
+                        alert(`User ${id} deleted successfully`)
+                        const newUser = requestToBeApart.filter(ab => ab._id != id);
+                        setrequestToBeApart(newUser)
+                    }
+                })
+    }
+
     return (
         <>
             <div className='d-flex gap-5 '>
                 {
                    requestToBeApart.length && requestToBeApart.map(dt => {
-                    const {contact,department,email,label,name,semester,status}=dt
+                    const {contact,department,email,label,name,semester,status,_id}=dt
 
                         return (
                             <div className="p-3 w-25 bg-primary mt-5" key={dt._id}>
@@ -38,6 +54,7 @@ const MakeAdmin = () => {
                                 <p>label: {label}</p>
                                 <p>semester :{semester}</p>
                                 <p>status: {status}</p>
+                                <button onClick={() =>handleDelete(_id)}>Delete Req?</button>
                             </div>
                         )
                     })

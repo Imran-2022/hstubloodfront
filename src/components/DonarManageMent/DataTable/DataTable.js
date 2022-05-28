@@ -37,8 +37,9 @@ const DataTable = () => {
             });
             const record = await res.json();
             if (record.deletedCount) {
-                console.log(record)
+                // console.log(record)
                 toast(`All done request deleted`)
+                
             } else {
                 toast("have no done request to delete !")
             }

@@ -15,14 +15,29 @@ const UserProfile = () => {
         }
         fetchData();
     }, [])
+
+    const handleDelete = (id) => {
+        console.log(id)
+            fetch(`http://localhost:8080/donors/${id}`, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())// or res.text()) 
+                .then(res => {
+                    if (res.deletedCount === 1) {
+                        alert(`User ${id} deleted successfully`)
+                        const newUser = profile.filter(ab => ab._id != id);
+                        setProfile(newUser)
+                    }
+                })
+    }
+    
     return (
         <>
             <div className="userProfile">
                 <p>user Profile</p>
                 {
                     profile.length ? profile.map((data, i) => {
-                        const { Name, age, bloodGroup, department, email, gender, label, mobile, semester } = data;
-                        console.log(Name, age, bloodGroup, department, email, gender, label, mobile, semester)
+                        const { Name, age, bloodGroup, department, email, gender, label, mobile, semester ,_id,lastDonateDate} = data;
                         return (
                             <div key={i}>
                                 <p>Name :{Name}</p>
@@ -35,6 +50,9 @@ const UserProfile = () => {
                                 <p>label :{label}</p>
                                 <p>mobile :{label}</p>
                                 <p>semester :{semester}</p>
+                                <p>lastDonateDate :{lastDonateDate}</p>
+                                <button className="btn btn-primary" onClick={()=>handleDelete(_id)}>remove profile</button>
+                                <button>Update Profile ?</button>
                             </div>
                         )
                     }) : <p>want to donate blood ? <Link to='/donate'>click to donate</Link> </p>

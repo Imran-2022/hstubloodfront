@@ -16,14 +16,16 @@ const Donate = () => {
         })
     };
     const [loggedInUser, setLoggedInUser] = useContext(userContext)
-    const [profile, setProfile] = useState({});
+    const [profile, setProfile] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
             const res = await fetch("http://localhost:8080/donors");
             const record = await res.json();
             const user = record.filter(dt => dt.email === loggedInUser.email)
-            setProfile(...user)
+            if(user){
+                setProfile(true)
+            }
         }
         fetchData();
     }, [])
@@ -72,7 +74,9 @@ const Donate = () => {
                 last Donate date (ignore if you don't yet.)
                 <input className="form-number-mobile" type='date' {...register("lastDonateDate")} />
                 {errors.lastDonateDate && <p>This field is required</p>}
-              <input className="my-3" type="submit" value="REQUEST TO DONATE" />
+              {
+                profile?<input className="my-3" type="submit" value="REQUEST TO DONATE" />:<input className="my-3" type="submit" value="REQUEST TO DONATE" disabled={true} />
+              }
             </form>
         </>
     );
