@@ -18,37 +18,65 @@ const Donors = () => {
             const res = await fetch("http://localhost:8080/donors");
             const record = await res.json();
             // setDonors(record.reverse())
-            setDonors(record)
-            setFilterBlood(record)
+
+            // filter only eligible donar -->
+
+            const filterValidDonars = record.filter((x) => {
+                // lastDonateDate
+                if (x.lastDonateDate) {
+                    const date1 = new Date(x.lastDonateDate);
+                    const date2 = new Date();
+                    const diffTime = Math.abs(date2 - date1);
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    if (diffDays > 90) {
+                        return x;
+                    }
+                }
+                else {
+                    return x;
+                }
+            })
+            setDonors(filterValidDonars)
+            setFilterBlood(filterValidDonars)
+
+            // setDonors(record)
+            // setFilterBlood(record)
         }
         fetchData();
     }, [])
     // console.log(donors)
 
-
-
-
     // const allCatagories =["A+","A-","B+","B-","AB+","AB-","O+","O-","ALL"];
+
     const [pageNumber, setPageNumber] = useState(0);
     const [group, setGroup] = useState("ALL")
     const filterImage = (fimage) => {
         setPageNumber(0)
         setFilterBlood(donors)
-        console.log("fimage", fimage);
         setGroup(fimage)
         if (fimage === "ALL") {
             setFilterBlood(donors)
         }
         else {
             const filterImages = donors.filter((x) => {
-
-                return x.bloodGroup === fimage;
+                // lastDonateDate
+                if (x.lastDonateDate) {
+                    const date1 = new Date(x.lastDonateDate);
+                    const date2 = new Date();
+                    const diffTime = Math.abs(date2 - date1);
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    if (diffDays > 90) {
+                        return x.bloodGroup === fimage;
+                    }
+                }
+                else {
+                    return x.bloodGroup === fimage;
+                }
             })
             setFilterBlood(filterImages)
-
         }
     }
-    // console.log(filterblood)
+
     const usersPerPage = 6;
     const pagesVisited = pageNumber * usersPerPage;
 
@@ -61,7 +89,7 @@ const Donors = () => {
     const displayUsers = filterblood
         .slice(pagesVisited, pagesVisited + usersPerPage)
         .map((user) => {
-            const { Name, age, bloodGroup, department, email, gender, label, mobile, semester, _id } = user
+            const { Name, age, bloodGroup, department, email, gender, label, mobile, semester, _id, lastDonateDate } = user
             return (
                 <div className="user">
                     {
@@ -87,6 +115,7 @@ const Donors = () => {
                         <p>blood-Group : {bloodGroup}</p>
                         <p>Depertment : {department}</p>
                         <p>Label : {label} & Semester : {semester}</p>
+                        <p>lastDonateDate : {lastDonateDate ? lastDonateDate : "no"}</p>
                     </div>
                 </div>
             );

@@ -69,6 +69,9 @@ const Donate = () => {
                     <option value="II">II</option>
                 </select>
                 </div>
+                last Donate date (ignore if you don't yet.)
+                <input className="form-number-mobile" type='date' {...register("lastDonateDate")} />
+                {errors.lastDonateDate && <p>This field is required</p>}
               <input className="my-3" type="submit" value="REQUEST TO DONATE" />
             </form>
         </>
