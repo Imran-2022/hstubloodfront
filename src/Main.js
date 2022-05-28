@@ -33,7 +33,7 @@ const Main = () => {
 
   return (
     <>
-      <div className="d-flex bg-danger justify-content-evenly align-items-center">
+      <div className="d-flex flex-wrap bg-danger justify-content-evenly align-items-center">
         <p className="p-1 m-0 text-light fw-bold"> For emergency only  </p>
         <p className="p-1 m-0 text-light fw-bold">< FiPhoneCall />  	&nbsp; +880 1771207845</p>
       </div>
