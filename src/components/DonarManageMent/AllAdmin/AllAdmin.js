@@ -8,10 +8,12 @@ const AllAdmin = () => {
             .then(response => response.json())
             .then(data => setAdmin(data));
     }, [])
+    
     // console.log("admin",admin);
+
     return (
         <div>
-            <small className=" text-primary d-flex gap-4 ">
+            <small className=" text-primary d-flex flex-wrap gap-1 ">
                 {
                     admin.map(admin => {
                         return (

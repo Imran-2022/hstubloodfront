@@ -16,6 +16,7 @@ import UserProfile from './components/UserProfile/UserProfile';
 import Admin from './components/DonarManageMent/Admin/Admin';
 import Request from './components/Request/Request';
 import PrivateRoute from './PrivateRoute';
+import { FiPhoneCall } from 'react-icons/fi';
 const Main = () => {
   const [len, setLen] = useState(0);
   const [users, setUsers] = useState(JsonData.slice(0, 200));
@@ -28,11 +29,14 @@ const Main = () => {
     setisopen(!isopen)
   }
 
-
   // scroll to top 
 
   return (
     <>
+      <div className="d-flex bg-danger justify-content-evenly align-items-center">
+        <p className="p-1 m-0 text-light fw-bold"> For emergency only  </p>
+        <p className="p-1 m-0 text-light fw-bold">< FiPhoneCall />  	&nbsp; +880 1771207845</p>
+      </div>
       <Navbar toggle={toggle} />
       <Sidebar isopen={isopen} toggle={toggle} />
       <Routes>

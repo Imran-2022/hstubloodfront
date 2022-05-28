@@ -83,7 +83,7 @@ const Donors = () => {
     // copy to clipboard :
     const notify = (num) => {
         navigator.clipboard.writeText(num.innerText);
-        toast(`number copied  ${num.innerText}`)
+        toast(`copied to clipboard`)
     };
 
     const displayUsers = filterblood
@@ -91,15 +91,14 @@ const Donors = () => {
         .map((user) => {
             const { Name, age, bloodGroup, department, email, gender, label, mobile, semester, _id, lastDonateDate } = user
             return (
-                <div className="user">
+                <div className="user" onClick={(e) =>notify(e.target)} style={{ cursor: 'pointer'}}>
                     {
                         user.gender === 'male' ? <img className="user-img m-3" src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg" alt="" /> :
                             <img className="user-img m-3" src="https://images.squarespace-cdn.com/content/v1/5fcb3cc52842004a669af981/1645140221610-471VVD9CDBEI8PNO6A5Q/avatar-F-White.jpg" alt="" />
                     }
                     <div>
                         <p>Name : {Name}</p>
-                        <p>Phone Number : <span style={{ cursor: 'pointer', padding: "5px", background: "#ddd" }} onClick={(e) =>
-                            notify(e.target)}>{mobile}</span></p>
+                        <p>Phone Number : <span style={{padding: "5px", background: "#ddd" }} >{mobile}</span></p>
                         <ToastContainer
                             position="bottom-right"
                             autoClose={1000}
