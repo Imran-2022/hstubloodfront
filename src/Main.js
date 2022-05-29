@@ -17,6 +17,7 @@ import Admin from './components/DonarManageMent/Admin/Admin';
 import Request from './components/Request/Request';
 import PrivateRoute from './PrivateRoute';
 import { FiPhoneCall } from 'react-icons/fi';
+import UpdateProfile from './components/UserProfile/UpdateProfile';
 const Main = () => {
   const [len, setLen] = useState(0);
   const [users, setUsers] = useState(JsonData.slice(0, 200));
@@ -52,6 +53,7 @@ const Main = () => {
           <Route path="/donate" element={<Donate />} />
           <Route path="/managing-team" element={<Admin />} />
           <Route path="/user-profile" element={<UserProfile />} />
+          <Route path="/update-profile/:abc" element={<UpdateProfile />} />
         </Route>
       </Routes>
       <Footer />

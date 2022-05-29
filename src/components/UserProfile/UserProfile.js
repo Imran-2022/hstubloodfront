@@ -52,7 +52,7 @@ const UserProfile = () => {
                                 <p>semester :{semester}</p>
                                 <p>lastDonateDate :{lastDonateDate}</p>
                                 <button className="btn btn-primary" onClick={()=>handleDelete(_id)}>remove profile</button>
-                                <button>Update Profile ?</button>
+                                <Link className="btn btn-primary"to={`/update-profile/${_id}`}>Update Profile ?</Link>
                             </div>
                         )
                     }) : <p>want to donate blood ? <Link to='/donate'>click to donate</Link> </p>
