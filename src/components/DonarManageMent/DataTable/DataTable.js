@@ -37,7 +37,6 @@ const DataTable = () => {
             });
             const record = await res.json();
             if (record.deletedCount) {
-                // console.log(record)
                 toast(`All done request deleted`)
                 
             } else {
@@ -82,7 +81,7 @@ const DataTable = () => {
                                             </select>
                                             <ToastContainer
                                                 position="top-center"
-                                                autoClose={5000}
+                                                autoClose={2000}
                                                 hideProgressBar={false}
                                                 newestOnTop={false}
                                                 closeOnClick
@@ -103,7 +102,7 @@ const DataTable = () => {
                 }
                 <ToastContainer
                     position="top-center"
-                    autoClose={5000}
+                    autoClose={2000}
                     hideProgressBar={false}
                     newestOnTop={false}
                     closeOnClick

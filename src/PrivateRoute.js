@@ -4,7 +4,6 @@ import { useLocation } from "react-router";
 import { Navigate, Outlet } from "react-router-dom";
 const PrivateRoute = ({ children }) => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext)
-    console.log(loggedInUser)
     const location = useLocation();
     return loggedInUser.email ?<Outlet />: <Navigate to="/sign-in" replace state={{ from: location }} /> 
 };

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./AllAdmin.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const AllAdmin = () => {
 
     const [admin, setAdmin] = useState([])
@@ -8,22 +10,20 @@ const AllAdmin = () => {
             .then(response => response.json())
             .then(data => setAdmin(data));
     }, [])
-    
-    // console.log("admin",admin);
+
 
     const handleDelete = (id) => {
-        console.log(id)
-            fetch(`http://localhost:8080/managingTeam/${id}`, {
-                method: 'DELETE',
+        fetch(`http://localhost:8080/managingTeam/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())// or res.text()) 
+            .then(res => {
+                if (res.deletedCount === 1) {
+                    toast(`User ${id} deleted successfully`)
+                    const newUser = admin.filter(ab => ab._id != id);
+                    setAdmin(newUser)
+                }
             })
-                .then(res => res.json())// or res.text()) 
-                .then(res => {
-                    if (res.deletedCount === 1) {
-                        alert(`User ${id} deleted successfully`)
-                        const newUser = admin.filter(ab => ab._id != id);
-                        setAdmin(newUser)
-                    }
-                })
     }
 
     return (
@@ -36,11 +36,22 @@ const AllAdmin = () => {
                                 <p>Name: {admin.name}</p>
                                 <p>Email: {admin.email}</p>
                                 <p>Phone: {admin.contact}</p>
-                                <button onClick={()=>handleDelete(admin._id)}>remove admin</button>
+                                <button onClick={() => handleDelete(admin._id)}>remove admin</button>
                             </div>
                         )
                     })
                 }
+                <ToastContainer
+                    position="top-center"
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
             </small>
         </div>
     );

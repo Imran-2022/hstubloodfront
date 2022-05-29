@@ -6,7 +6,6 @@ const AddData = () => {
 
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        console.log("🚀");
         axios.post('https://learn-onlinee.herokuapp.com/data', data)
             .then(res => {
                 if (res.data) {

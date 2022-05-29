@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { userContext } from '../../Context/Context';
 import BeATeamMemberFrom from '../DonarManageMent/BeATeamMemeber/BeATeamMemberFrom';
 import "./UserProfile.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const UserProfile = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext)
     const [profile, setProfile] = useState([]);
@@ -17,27 +19,26 @@ const UserProfile = () => {
     }, [])
 
     const handleDelete = (id) => {
-        console.log(id)
-            fetch(`http://localhost:8080/donors/${id}`, {
-                method: 'DELETE',
+        fetch(`http://localhost:8080/donors/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())// or res.text()) 
+            .then(res => {
+                if (res.deletedCount === 1) {
+                    toast(`User ${id} deleted successfully`)
+                    const newUser = profile.filter(ab => ab._id != id);
+                    setProfile(newUser)
+                }
             })
-                .then(res => res.json())// or res.text()) 
-                .then(res => {
-                    if (res.deletedCount === 1) {
-                        alert(`User ${id} deleted successfully`)
-                        const newUser = profile.filter(ab => ab._id != id);
-                        setProfile(newUser)
-                    }
-                })
     }
-    
+
     return (
         <>
             <div className="userProfile">
                 <p>user Profile</p>
                 {
                     profile.length ? profile.map((data, i) => {
-                        const { Name, age, bloodGroup, department, email, gender, label, mobile, semester ,_id,lastDonateDate} = data;
+                        const { Name, age, bloodGroup, department, email, gender, label, mobile, semester, _id, lastDonateDate } = data;
                         return (
                             <div key={i}>
                                 <p>Name :{Name}</p>
@@ -51,12 +52,25 @@ const UserProfile = () => {
                                 <p>mobile :{label}</p>
                                 <p>semester :{semester}</p>
                                 <p>lastDonateDate :{lastDonateDate}</p>
-                                <button className="btn btn-primary" onClick={()=>handleDelete(_id)}>remove profile</button>
-                                <Link className="btn btn-primary"to={`/update-profile/${_id}`}>Update Profile ?</Link>
+                                <button className="btn btn-primary" onClick={() => handleDelete(_id)}>remove profile</button>
+                                <Link className="btn btn-primary" to={`/update-profile/${_id}`}>Update Profile ?</Link>
+
                             </div>
+
                         )
                     }) : <p>want to donate blood ? <Link to='/donate'>click to donate</Link> </p>
                 }
+                <ToastContainer
+                    position="top-center"
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
 
             </div>
             <BeATeamMemberFrom />

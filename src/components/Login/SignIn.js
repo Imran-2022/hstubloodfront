@@ -5,11 +5,12 @@ import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "fir
 import initialAuth from '../../Firebase/InitializeFirebase';
 import { userContext } from '../../Context/Context';
 import { useLocation, useNavigate } from "react-router";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const SignIn = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [loggedInUser, setLoggedInUser] = useContext(userContext)
- 
 
     const [userData, setUserData] = useState({});
     initialAuth()
@@ -22,11 +23,10 @@ const SignIn = () => {
             .then((userCredential) => {
                 // Signed in 
                 const { email, displayName } = userCredential.user;
-
                 setUserData({ email, displayName });
                 setLoggedInUser({ email, displayName })
                 // ...
-                alert("signIn successful")
+                toast("signIn successful")
                 if (location.state?.from) {
                     navigate(location.state.from);
                   }
@@ -34,9 +34,7 @@ const SignIn = () => {
             .catch((error) => {
                 alert(error.message)
             });
-
     }
-    // console.log(userData.displayName)
 
     const handleForgetPassword = () => {
         sendPasswordResetEmail(auth, userEmail.current.value)
@@ -70,7 +68,17 @@ const SignIn = () => {
                     <p onClick={handleForgetPassword} className="forgot-password text-right py-1 text-danger" style={{ cursor: 'pointer', textDecoration: "underLine" }}>Forgot password?</p>
                     <p>New there ? sign up first  <Link to="/sign-up">Sign Up</Link> </p>
                 </form>
-
+                <ToastContainer
+                position="top-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
             </div>
         </>
     );

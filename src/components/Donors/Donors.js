@@ -44,7 +44,6 @@ const Donors = () => {
         }
         fetchData();
     }, [])
-    // console.log(donors)
 
     // const allCatagories =["A+","A-","B+","B-","AB+","AB-","O+","O-","ALL"];
 

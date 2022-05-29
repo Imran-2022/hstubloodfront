@@ -3,6 +3,8 @@ import "./BeATeamMemberFrom.css"
 import { useForm } from "react-hook-form";
 import axios from 'axios'
 import { userContext } from '../../../Context/Context';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const BeATeamMemberFrom = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext)
 
@@ -11,11 +13,10 @@ const BeATeamMemberFrom = () => {
         axios.post('http://localhost:8080/beApart', data)
             .then(res => {
                 if (res) {
-                    alert("we received your request !!!");
+                    toast("we received your request !!!")
                     reset()
                 }
             })
-        console.log(data)
     }
     return (
         <div>
@@ -50,6 +51,17 @@ const BeATeamMemberFrom = () => {
                     {errors.status && <small className="text-end">This field is required</small>}
                     <input type="submit" value="BE A PART OF US ?" className="fs-5 p-3 rounded fw-bold" />
                 </form>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
             </div>
         </div>
     );

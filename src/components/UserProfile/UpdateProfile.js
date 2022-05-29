@@ -3,10 +3,12 @@ import { useForm } from 'react-hook-form';
 import { useParams, useNavigate } from 'react-router-dom';
 import { userContext } from '../../Context/Context';
 import "./UserProfile.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const UpdateProfile = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm({
-        defaultValues: { department:"abc"},
-      });
+        defaultValues: { department: "abc" },
+    });
     const [loggedInUser, setLoggedInUser] = useContext(userContext)
     const [profile, setProfile] = useState({});
     const { abc } = useParams()
@@ -25,7 +27,7 @@ const UpdateProfile = () => {
             .then(response => response.json())
             .then(result => {
                 if (result.modifiedCount > 0) {
-                    alert('Updated')
+                    toast(`Updated`)
                 }
             })
     };
@@ -46,14 +48,14 @@ const UpdateProfile = () => {
         <div>
             <button className="btn btn-primary mx-5 mt-2 " onClick={() => navigate(-1)}>Go back</button>
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
-                
-                <input  defaultValue={loggedInUser.displayName || "your Name"} {...register("Name")} autoComplete="off" readOnly />
+
+                <input defaultValue={loggedInUser.displayName || "your Name"} {...register("Name")} autoComplete="off" readOnly />
                 {errors.Name && <p>This field is required</p>}
 
                 <input defaultValue={loggedInUser.email || "your email"} {...register("email")} autoComplete="off" readOnly />
                 {errors.email && <p>This field is required</p>}
 
-                <input className="form-number-mobile"  type='number' defaultValue={profile.mobile} {...register("mobile")} />
+                <input className="form-number-mobile" type='number' defaultValue={profile.mobile} {...register("mobile")} />
                 {errors.mobile && <p>This field is required</p>}
 
                 <input type='number' min={18} defaultValue={profile.age} {...register("age")} />
@@ -87,7 +89,7 @@ const UpdateProfile = () => {
                         <option value="4">4</option>
                     </select> &&
                     Semester :
-                    <select {...register("semester")}  className="m-1 px-5">
+                    <select {...register("semester")} className="m-1 px-5">
                         <option value={profile.semester} selected disabled hidden>{profile.semester}</option>
                         <option value="I">I</option>
                         <option value="II">II</option>
@@ -96,8 +98,19 @@ const UpdateProfile = () => {
                 last Donate date (ignore if you don't yet.)
                 <input className="form-number-mobile" type='date' defaultValue={profile.lastDonateDate} {...register("lastDonateDate")} />
                 {errors.lastDonateDate && <p>This field is required</p>}
-                <input className="my-3" type="submit" value="UPDATE YOUR DONATE PROFILE"/>
+                <input className="my-3" type="submit" value="UPDATE YOUR DONATE PROFILE" />
             </form>
+            <ToastContainer
+                position="top-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     );
 };

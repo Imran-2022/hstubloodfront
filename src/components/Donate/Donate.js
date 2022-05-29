@@ -3,6 +3,8 @@ import "./Donate.css"
 import { useForm } from "react-hook-form";
 import axios from 'axios'
 import { userContext } from '../../Context/Context';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Donate = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [profile, setProfile] = useState(false);
@@ -11,7 +13,7 @@ const Donate = () => {
         axios.post('http://localhost:8080/donors', data)
             .then(res => {
                 if (res.data) {
-                    alert("data added successfully !!!");
+                    toast(`data added successfully !!!`)
                     setProfile(true)
                     reset()
                 }
@@ -30,7 +32,6 @@ const Donate = () => {
         }
         fetchData();
     }, [])
-    console.log(profile)
     return (
         <>
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
@@ -77,9 +78,20 @@ const Donate = () => {
                 <input className="form-number-mobile" type='date' {...register("lastDonateDate")} />
                 {errors.lastDonateDate && <p>This field is required</p>}
                 {
-                    profile ? <input className="my-3" type="submit" value="REQUEST TO DONATE" disabled={true} /> : <input className="my-3" type="submit" value="REQUEST TO DONATE" />
+                    profile ? <input className="my-3" type="submit" value="ALREADY HAVE A REQUEST" disabled={true} /> : <input className="my-3" type="submit" value="REQUEST TO DONATE" />
                 }
             </form>
+            <ToastContainer
+                position="top-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </>
     );
 };

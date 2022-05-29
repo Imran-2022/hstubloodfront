@@ -4,6 +4,8 @@ import "./Sign.css"
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import initialAuth from '../../Firebase/InitializeFirebase';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const SignUp = () => {
     const navigate = useNavigate();
     const [userData, setUserData] = useState({});
@@ -16,20 +18,17 @@ const SignUp = () => {
 
     const handleSignUp = (e) => {
         e.preventDefault();
-        // console.log(userEmail.current.value,userPassword.current.value,comfirmPassword.current.value)
         if (userPassword.current.value === comfirmPassword.current.value) {
             createUserWithEmailAndPassword(auth, userEmail.current.value, userPassword.current.value)
                 .then((userCredential) => {
                     updateUser();
                     const user = userCredential.user.email;
-                    // console.log(user)
                     setUserData({ email: user })
-                    // if (user) {console.log(JSON.stringify(user))};
-                    alert("signUp successful")
+                    toast("signUp successful")
                     setTimeout(() => {
                         navigate(-1)
 
-                    }, "2000")
+                    }, "1000")
                 })
                 .catch((error) => {
                     const errorMessage = error.message;
@@ -47,13 +46,11 @@ const SignUp = () => {
             displayName: `${userName.current.value}`
         }).then(() => {
             setUserData({ ...userData, name: auth.currentUser.displayName })
-            // console.log("display name: " + auth.currentUser.displayName); 
         }).catch((error) => {
             alert(error)
         });
     }
 
-    userData.name && console.log(userData)
     return (
         <>
             <div className=" m-auto w-100 mt-4">
@@ -83,7 +80,17 @@ const SignUp = () => {
                         Already registered <Link to="/sign-in">sign in?</Link>
                     </p>
                 </form>
-
+                <ToastContainer
+                position="top-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
             </div>
         </>
     );
