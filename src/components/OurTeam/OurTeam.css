@@ -33,3 +33,15 @@
     align-content: center;
     min-height: 80vh;
 }
+.team-m{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+}
+.team-m >div{
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.team-m >div>div{
+    padding: 10px;
+}

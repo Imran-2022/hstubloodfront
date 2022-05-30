@@ -21,9 +21,31 @@ const OurTeam = () => {
                             A mini health exam that includes a checklist for diseases related to blood pressure and infectious diseases should be conducted before initiating the collection of blood. Those who have medical conditions such as AIDS and hepatitis should not donate blood. People who have taken vaccinations or have undergone any surgery or have cancer, diabetes, cold, and flu should consult health experts before donating blood. Pregnant women should seek expert advice before donating blood.</p>
                         <Link className="btn btn-outline-primary w-100" to="/">Explore now</Link>
                     </div>
-                    <div className="about-col pt-4 pb-5">
-                        <img width="100%" src="images/campus-our.jpg" alt="" />
-                        <p className="text-center">our Beloved Campus</p>
+                    <div className="team-m">
+                        <div>
+                            <img width="100%" src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg" alt="" />
+                            <div>
+                                <p>Mr. XYZ </p>
+                                <p>President </p>
+                                <p>HSTU Blood Share</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img width="100%" src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg" alt="" />
+                            <div>
+                                <p>Mr. ABC </p>
+                                <p>Vice President</p>
+                                <p>HSTU Blood Share</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img width="100%" src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg" alt="" />
+                            <div>
+                                <p>Mst. MNO</p>
+                                <p>Secretary </p>
+                                <p>HSTU Blood Share</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
