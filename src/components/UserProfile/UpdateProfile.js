@@ -15,7 +15,7 @@ const UpdateProfile = () => {
     const navigate = useNavigate()
     const onSubmit = (data) => {
         console.table("data", data)
-        const url = `http://hstu-blood-share.herokuapp.com/donors/${abc}`;
+        const url = `https://hstu-blood-share.herokuapp.com/donors/${abc}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -35,7 +35,7 @@ const UpdateProfile = () => {
     useEffect(() => {
         reset()
         async function fetchData() {
-            const res = await fetch("http://hstu-blood-share.herokuapp.com/donors");
+            const res = await fetch("https://hstu-blood-share.herokuapp.com/donors");
             const record = await res.json();
             const user = record.filter(dt => dt._id === abc)
             reset(...user)

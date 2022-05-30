@@ -13,7 +13,7 @@ const Request = () => {
     const form = useRef();
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        axios.post('http://hstu-blood-share.herokuapp.com/request', data)
+        axios.post('https://hstu-blood-share.herokuapp.com/request', data)
             .then(res => {
                 if (res.data) {
                     toast(`submitted , we will contact you soon !!`)

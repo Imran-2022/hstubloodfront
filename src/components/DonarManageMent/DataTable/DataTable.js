@@ -7,7 +7,7 @@ const DataTable = () => {
     const [data, setData] = useState([])
     useEffect(() => {
         async function fetchData() {
-            const res = await fetch("http://hstu-blood-share.herokuapp.com/request");
+            const res = await fetch("https://hstu-blood-share.herokuapp.com/request");
             const record = await res.json();
             setData(record)
         }
@@ -15,7 +15,7 @@ const DataTable = () => {
     }, [])
 
     const handleRequestStatus = (e) => {
-        const url = `http://hstu-blood-share.herokuapp.com/request/${e}`;
+        const url = `https://hstu-blood-share.herokuapp.com/request/${e}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -32,7 +32,7 @@ const DataTable = () => {
     }
     const deleteAllRequest = () => {
         async function fetchData() {
-            const res = await fetch("http://hstu-blood-share.herokuapp.com/request", {
+            const res = await fetch("https://hstu-blood-share.herokuapp.com/request", {
                 method: 'DELETE',
             });
             const record = await res.json();

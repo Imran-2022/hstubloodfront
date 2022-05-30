@@ -10,7 +10,7 @@ const UserProfile = () => {
     const [profile, setProfile] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            const res = await fetch("http://hstu-blood-share.herokuapp.com/donors");
+            const res = await fetch("https://hstu-blood-share.herokuapp.com/donors");
             const record = await res.json();
             const user = record.filter(dt => dt.email === loggedInUser.email)
             setProfile(user)
@@ -19,7 +19,7 @@ const UserProfile = () => {
     }, [])
 
     const handleDelete = (id) => {
-        fetch(`http://hstu-blood-share.herokuapp.com/donors/${id}`, {
+        fetch(`https://hstu-blood-share.herokuapp.com/donors/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())// or res.text()) 

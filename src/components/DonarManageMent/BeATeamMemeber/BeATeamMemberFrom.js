@@ -10,7 +10,7 @@ const BeATeamMemberFrom = () => {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = (data) => {
-        axios.post('http://hstu-blood-share.herokuapp.com/beApart', data)
+        axios.post('https://hstu-blood-share.herokuapp.com/beApart', data)
             .then(res => {
                 if (res) {
                     toast("we received your request !!!")

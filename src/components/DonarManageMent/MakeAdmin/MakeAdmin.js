@@ -8,7 +8,7 @@ const MakeAdmin = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [requestToBeApart, setrequestToBeApart] = useState([])
     const onSubmit = (data) => {
-        axios.post('http://hstu-blood-share.herokuapp.com/managingTeam', data)
+        axios.post('https://hstu-blood-share.herokuapp.com/managingTeam', data)
             .then(res => {
                 if (res.data) {
                     toast("new admin added !!!")
@@ -18,13 +18,13 @@ const MakeAdmin = () => {
     }
 
     useEffect(() => {
-        fetch('http://hstu-blood-share.herokuapp.com/beAPart')
+        fetch('https://hstu-blood-share.herokuapp.com/beAPart')
             .then(response => response.json())
             .then(data => setrequestToBeApart(data));
     }, [])
 
     const handleDelete = (id) => {
-        fetch(`http://hstu-blood-share.herokuapp.com/beAPart/${id}`, {
+        fetch(`https://hstu-blood-share.herokuapp.com/beAPart/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())// or res.text()) 

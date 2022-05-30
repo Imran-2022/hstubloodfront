@@ -9,7 +9,7 @@ const Navbar = ({ toggle }) => {
     const [validManage, setValidManage] = useState(false)
     // const [admin, setAdmin] = useState([])
     useEffect(() => {
-        fetch('http://hstu-blood-share.herokuapp.com/managingTeam')
+        fetch('https://hstu-blood-share.herokuapp.com/managingTeam')
             .then(response => response.json())
             .then(data => {
                 for (var i = 0; i < data.length; ++i) {

@@ -15,7 +15,7 @@ const Donors = () => {
     // data from backend 
     useEffect(() => {
         async function fetchData() {
-            const res = await fetch("http://hstu-blood-share.herokuapp.com/donors");
+            const res = await fetch("https://hstu-blood-share.herokuapp.com/donors");
             const record = await res.json();
             // setDonors(record.reverse())
 
