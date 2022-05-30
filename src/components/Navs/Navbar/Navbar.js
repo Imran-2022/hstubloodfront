@@ -9,16 +9,16 @@ const Navbar = ({ toggle }) => {
     const [validManage, setValidManage] = useState(false)
     // const [admin, setAdmin] = useState([])
     useEffect(() => {
-        fetch('http://localhost:8080/managingTeam')
+        fetch('http://hstu-blood-share.herokuapp.com/managingTeam')
             .then(response => response.json())
             .then(data => {
                 for (var i = 0; i < data.length; ++i) {
                     // data[i].email
                     console.log(data[i].email)
-                    if(data[i].email==loggedInUser.email) {
+                    if (data[i].email == loggedInUser.email) {
                         setValidManage(true)
-                        console.log(data[i].email,"included",loggedInUser.email)
-                    }else{
+                        console.log(data[i].email, "included", loggedInUser.email)
+                    } else {
                         setValidManage(false)
                     }
 
@@ -40,7 +40,7 @@ const Navbar = ({ toggle }) => {
                     {
                         validManage && <Link className="nav-link text-light" to="/managing-team">MANAGING-TEAM</Link>
                     }
-                    
+
                 </div>
                 <div className="mobile-menu-icon">
                     <FaBars onClick={toggle} />

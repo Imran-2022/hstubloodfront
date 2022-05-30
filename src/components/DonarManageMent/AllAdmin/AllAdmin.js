@@ -6,14 +6,14 @@ const AllAdmin = () => {
 
     const [admin, setAdmin] = useState([])
     useEffect(() => {
-        fetch('http://localhost:8080/managingTeam')
+        fetch('http://hstu-blood-share.herokuapp.com/managingTeam')
             .then(response => response.json())
             .then(data => setAdmin(data));
     }, [])
 
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:8080/managingTeam/${id}`, {
+        fetch(`http://hstu-blood-share.herokuapp.com/managingTeam/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())// or res.text()) 

@@ -13,22 +13,22 @@ const Request = () => {
     const form = useRef();
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        axios.post('http://localhost:8080/request', data)
+        axios.post('http://hstu-blood-share.herokuapp.com/request', data)
             .then(res => {
                 if (res.data) {
                     toast(`submitted , we will contact you soon !!`)
                     reset()
                 }
             })
-            const serviceID = 'service_o90hmbu';
-            const templateID = 'template_ikf1axn';
-            const USER_ID = '8ugCrIsnh4sGlS8-n'
-            emailjs.sendForm(serviceID, templateID, form.current, USER_ID)
-                .then((result) => {
-                  
-                }, (error) => {
-                    alert(error.text);
-                });
+        const serviceID = 'service_o90hmbu';
+        const templateID = 'template_ikf1axn';
+        const USER_ID = '8ugCrIsnh4sGlS8-n'
+        emailjs.sendForm(serviceID, templateID, form.current, USER_ID)
+            .then((result) => {
+
+            }, (error) => {
+                alert(error.text);
+            });
     }
     return (
         <div className="mt-5 mb-5 ">

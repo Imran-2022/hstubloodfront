@@ -10,7 +10,7 @@ const Donate = () => {
     const [profile, setProfile] = useState(false);
 
     const onSubmit = (data) => {
-        axios.post('http://localhost:8080/donors', data)
+        axios.post('http://hstu-blood-share.herokuapp.com/donors', data)
             .then(res => {
                 if (res.data) {
                     toast(`data added successfully !!!`)
@@ -23,7 +23,7 @@ const Donate = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const res = await fetch("http://localhost:8080/donors");
+            const res = await fetch("http://hstu-blood-share.herokuapp.com/donors");
             const record = await res.json();
             const user = record.filter(dt => dt.email === loggedInUser.email)
             if (user.length) {
