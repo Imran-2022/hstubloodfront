@@ -59,6 +59,8 @@ ul {
 }
 .footer-logo {
   margin-bottom: 30px;
+  color: #00934d;
+  font-weight: bold;
 }
 .footer-logo img {
     max-width: 200px;
@@ -126,6 +128,7 @@ ul {
 .footer-widget ul li a {
   color: #878787;
   text-transform: capitalize;
+  font-size: 13px;
 }
 .subscribe-form {
   position: relative;
