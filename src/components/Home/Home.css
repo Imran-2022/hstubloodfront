@@ -19,6 +19,7 @@ video {
     background-repeat: no-repeat;
     background-position: 100% 100%;
     background-size: cover;
+    background-attachment: fixed;
     width: 100%;
     height: 92vh !important;
     display: flex;
@@ -43,11 +44,11 @@ video {
     /* font-family: 'Shadows Into Light', cursive; */
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
-button{
+/* button{
     background:#0000ff38;
     padding: 5px;
     cursor: pointer;
-}
+} */
 .authorsays{
   min-height: 91vh;
   width: 100%;

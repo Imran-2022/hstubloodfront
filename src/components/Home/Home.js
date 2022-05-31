@@ -21,14 +21,16 @@ const Home = () => {
                 </div>
             </div>
             <Home2 />
-            <Faq/>
+            <div style={{ background: "#f1f5f8",padding:"10px" }}>
+                <Faq />
+            </div>
             <div className="p-4 bg-primary authorsays " style={{ backgroundImage: 'linear-gradient(rgba(6, 11, 37, 0.89), rgba(4, 9, 30, 0.92)), url(https://alifeofproductivity.com/wp-content/uploads/2016/09/bookRZ.jpg)' }}>
                 <div className="container pb-5">
                     <h1 className="pb-5">Here's what <span>STUDENTS</span> say ?</h1>
                 </div>
                 <Testimonials />
             </div>
-            <BeATeamMemeber/>
+            <BeATeamMemeber />
         </>
     );
 };

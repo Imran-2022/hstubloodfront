@@ -1,5 +1,9 @@
 .faqq{
   min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
 }
   .faq {
     margin: 3rem 0;
@@ -57,7 +61,7 @@
     font-weight: light;
     font-size: 1.2rem;
     line-height: 1.5;
-    color: #070ffa;
+    color: #030311;
     height: 0%;
     animation: slidein 0.4s;
     animation-fill-mode: forwards;
