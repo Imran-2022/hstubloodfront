@@ -17,7 +17,9 @@ const Donate = () => {
                     toast(`data added successfully !!!`)
                     setProfile(true)
                     reset()
-                    navigate("/user-profile")
+                    setTimeout(() => {
+                        navigate("/user-profile")
+                    }, 3000);
                 }
             })
     };
