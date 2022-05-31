@@ -9,6 +9,7 @@ const Navbar = ({ toggle }) => {
     const [validManage, setValidManage] = useState(false)
     // const [admin, setAdmin] = useState([])
     useEffect(() => {
+        setValidManage(false)
         fetch('https://hstu-blood-share.herokuapp.com/managingTeam')
             .then(response => response.json())
             .then(data => {
