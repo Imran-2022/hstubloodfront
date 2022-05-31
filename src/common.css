@@ -89,4 +89,8 @@
   .wu-75{
     width:90% ;
   }
+  .paginationBttns a{
+    padding: 3px !important;
+    margin: 3px !important;
+  }
 }
