@@ -32,7 +32,12 @@
 .p-form {
   padding: 30px;
 }
-
+.ww-75{
+  width: 55% !important;
+}
+.www-75{
+  width: 80% !important;
+}
 @media (max-width: 750px) {
   .footer-widget img {
     display: none;
@@ -73,5 +78,11 @@
 
   .p-form {
     padding: 10px;
+  }
+  .ww-75{
+    width: 90% !important;
+  }
+  .www-75{
+    width: 90% !important;
   }
 }
