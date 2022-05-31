@@ -18,8 +18,6 @@ const Navbar = ({ toggle }) => {
                     if (data[i].email == loggedInUser.email) {
                         setValidManage(true)
                         console.log(data[i].email, "included", loggedInUser.email)
-                    } else {
-                        setValidManage(false)
                     }
 
                 }
