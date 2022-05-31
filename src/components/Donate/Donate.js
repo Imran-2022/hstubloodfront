@@ -7,6 +7,8 @@ import { userContext } from '../../Context/Context';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Donate = () => {
+    const [donors, setDonors] = useState([]);
+
     let navigate = useNavigate();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [profile, setProfile] = useState(false);
@@ -29,6 +31,7 @@ const Donate = () => {
         async function fetchData() {
             const res = await fetch("https://hstu-blood-share.herokuapp.com/donors");
             const record = await res.json();
+            setDonors(record)
             const user = record.filter(dt => dt.email === loggedInUser.email)
             if (user.length) {
                 setProfile(true)
@@ -82,7 +85,13 @@ const Donate = () => {
                 <input className="form-number-mobile" type='date' {...register("lastDonateDate")} />
                 {errors.lastDonateDate && <p>This field is required</p>}
                 {
-                    profile ? <input className="my-3" type="submit" value="ALREADY HAVE A REQUEST" disabled={true} /> : <input className="my-3" type="submit" value="REQUEST TO DONATE" />
+                    donors.length>4 ? <div>
+                        {
+                            profile ? <input className="my-3" type="submit" value="ALREADY HAVE A REQUEST" disabled={true} /> : <input className="my-3" type="submit" value="REQUEST TO DONATE" />
+                        }
+                    </div>:<div>
+                        <p className='text-center'>button loading !!</p>
+                    </div>
                 }
             </form>
             <ToastContainer

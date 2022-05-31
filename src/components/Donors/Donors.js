@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./Donors.css"
 import { userContext } from "../../Context/Context";
+import { Button, Spinner } from "react-bootstrap";
 
 const Donors = () => {
 
@@ -103,49 +104,70 @@ const Donors = () => {
             });
     }, [loggedInUser])
     console.log(validManage)
+
+
+
+    const handleDelete = (id) => {
+        fetch(`https://hstu-blood-share.herokuapp.com/donors/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())// or res.text()) 
+            .then(res => {
+                if (res.deletedCount === 1) {
+                    toast(`User ${id} deleted successfully`)
+                }
+            })
+    }
     const displayUsers = filterblood
         .slice(pagesVisited, pagesVisited + usersPerPage)
         .map((user) => {
             const { Name, age, bloodGroup, department, email, gender, label, mobile, semester, _id, lastDonateDate } = user
             return (
-                <div className="user" onClick={(e) => notify(e.target)} style={{ cursor: 'pointer' }}>
-                    {
-                        user.gender === 'male' ? <img className="user-img m-3" src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg" alt="" /> :
-                            <img className="user-img m-3" src="https://images.squarespace-cdn.com/content/v1/5fcb3cc52842004a669af981/1645140221610-471VVD9CDBEI8PNO6A5Q/avatar-F-White.jpg" alt="" />
-                    }
-                    <div>
-                        <p>Name : {Name}</p>
+                <>
+                    <div className="user" >
                         {
-                            validManage && <p>Phone Number : <span style={{ padding: "5px", background: "#ddd" }} >{mobile}</span></p>
+                            user.gender === 'male' ? <img className="user-img m-3" src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg" alt="" /> :
+                                <img className="user-img m-3" src="https://images.squarespace-cdn.com/content/v1/5fcb3cc52842004a669af981/1645140221610-471VVD9CDBEI8PNO6A5Q/avatar-F-White.jpg" alt="" />
                         }
-                        
-                        <ToastContainer
-                            position="bottom-right"
-                            autoClose={1000}
-                            hideProgressBar={false}
-                            newestOnTop={false}
-                            closeOnClick
-                            rtl={false}
-                            pauseOnFocusLoss
-                            draggable
-                            pauseOnHover
-                        />
-                        <p>age : {age}</p>
-                        <p>blood-Group : {bloodGroup}</p>
+                        <div onClick={(e) => notify(e.target)} style={{ cursor: 'pointer' }}>
+                            <p>Name : {Name}</p>
+                            {
+                                validManage && <p>Phone Number : <span style={{ padding: "5px", background: "#ddd" }} >{mobile}</span></p>
+                            }
 
-                        {
-                            validManage &&<p>Depertment : {department}</p>
-                        }
-                        {
-                            validManage &&<p>Label : {label} & Semester : {semester}</p>
-                        }
-                        {
+                            <ToastContainer
+                                position="bottom-right"
+                                autoClose={1000}
+                                hideProgressBar={false}
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                                pauseOnHover
+                            />
+                            <p>age : {age}</p>
+                            <p>blood-Group : {bloodGroup}</p>
+
+                            {
+                                validManage && <p>Depertment : {department}</p>
+                            }
+                            {
+                                validManage && <p>Label : {label} & Semester : {semester}</p>
+                            }
+
                             <p>lastDonateDate : {lastDonateDate ? lastDonateDate : "no"}</p>
+
+
+
+
+                        </div>
+                        {
+                            validManage && <button className="btn btn-primary" onClick={() => handleDelete(_id)}>remove profile</button>
                         }
-                        
-                        
                     </div>
-                </div>
+
+                </>
             );
         });
 
@@ -160,39 +182,55 @@ const Donors = () => {
     }
     return (
         <>
-            <div className="catagories py-5 ms-5">
-                <label for="blood">Choose a BLOOD GROUP : &nbsp;</label>
-                <select id="blood" name="bloodlist" onChange={(e) => filterImage(e.target.value)}>
-                    <option selected="selected" value="ALL">ALL</option>
-                    <option value="A+">A+</option>
-                    <option value="B+">B+</option>
-                    <option value="AB+">AB+</option>
-                    <option value="O+">O+</option>
-                    <option value="A-">A-</option>
-                    <option value="B-">B-</option>
-                    <option value="AB-">AB-</option>
-                    <option value="O-">O-</option>
-                </select>
-                &nbsp; available donar for {group} : {filterblood.length}
-            </div>
-            <div className="App container py-5">
-                {displayUsers}
-            </div>
-            <div className="App-pagination" onClick={() => handlePagination()}>
-                {
-                    filterblood.length > 6 && <ReactPaginate
-                        previousLabel={<BsFillArrowLeftCircleFill />}
-                        nextLabel={<BsFillArrowRightCircleFill />}
-                        pageCount={pageCount}
-                        onPageChange={changePage}
-                        containerClassName={"paginationBttns"}
-                        previousLinkClassName={"previousBttn"}
-                        nextLinkClassName={"nextBttn"}
-                        disabledClassName={"paginationDisabled"}
-                        activeClassName={"paginationActive"}
-                    />
-                }
-            </div>
+            {
+                donors.length ? <div>
+                    <div className="catagories py-5 ms-5">
+                        <label for="blood">Choose a BLOOD GROUP : &nbsp;</label>
+                        <select id="blood" name="bloodlist" onChange={(e) => filterImage(e.target.value)}>
+                            <option selected="selected" value="ALL">ALL</option>
+                            <option value="A+">A+</option>
+                            <option value="B+">B+</option>
+                            <option value="AB+">AB+</option>
+                            <option value="O+">O+</option>
+                            <option value="A-">A-</option>
+                            <option value="B-">B-</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O-">O-</option>
+                        </select>
+                        &nbsp; available donar for {group} : {filterblood.length}
+                    </div>
+                    <div className="App container py-5">
+                        {displayUsers}
+                    </div>
+                    <div className="App-pagination" onClick={() => handlePagination()}>
+                        {
+                            filterblood.length > 6 && <ReactPaginate
+                                previousLabel={<BsFillArrowLeftCircleFill />}
+                                nextLabel={<BsFillArrowRightCircleFill />}
+                                pageCount={pageCount}
+                                onPageChange={changePage}
+                                containerClassName={"paginationBttns"}
+                                previousLinkClassName={"previousBttn"}
+                                nextLinkClassName={"nextBttn"}
+                                disabledClassName={"paginationDisabled"}
+                                activeClassName={"paginationActive"}
+                            />
+                        }
+                    </div>
+                </div> : <div className="loader">
+                    <Button variant="primary" disabled>
+                        <Spinner
+                            as="span"
+                            animation="grow"
+                            size="sm"
+                            role="status"
+                            aria-hidden="true"
+                        />
+                        Loading...
+                    </Button>
+                </div>
+            }
+
         </>
     );
 };
