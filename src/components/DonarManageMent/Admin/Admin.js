@@ -50,7 +50,11 @@ const Admin = () => {
                     </TabPanel>
                 </div>
             </div>
-        </Tabs>: <div> it's private place bro !!</div>
+        </Tabs>: <div className='privatepage'> 
+                <p>page not found !! this is private page.</p>
+                <p>change your route form nav</p>
+                <p>🤣</p>
+             </div>
         }
         </>
     );

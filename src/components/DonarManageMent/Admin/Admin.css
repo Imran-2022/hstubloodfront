@@ -11,3 +11,10 @@
     background-color: #666 !important;
     color: white;
   } */
+.privatepage{
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
