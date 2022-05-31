@@ -34,7 +34,7 @@ const Donate = () => {
     }, [])
     return (
         <>
-            <form className="form m-3" onSubmit={handleSubmit(onSubmit)}>
+            <form className="form my-3 px-4" onSubmit={handleSubmit(onSubmit)}>
 
                 <input defaultValue={loggedInUser.displayName || "your Name"} {...register("Name", { required: true })} autoComplete="off" readOnly />
                 {errors.Name && <p>This field is required</p>}
