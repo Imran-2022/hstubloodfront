@@ -9,3 +9,14 @@
     border-bottom: 1px solid;
     padding-left: 0px;
 }
+.reqAdmin{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-gap: 10px;
+    justify-content: center;
+    align-content: center;
+}
+.reqAdmin-in{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

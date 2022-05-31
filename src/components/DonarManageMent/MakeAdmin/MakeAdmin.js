@@ -39,13 +39,13 @@ const MakeAdmin = () => {
 
     return (
         <>
-            <div className='d-flex gap-5 '>
+            <div className='reqAdmin'>
                 {
                     requestToBeApart.length && requestToBeApart.map(dt => {
                         const { contact, department, email, label, name, semester, status, _id } = dt
 
                         return (
-                            <div className="p-3 w-25 bg-primary mt-5" key={dt._id}>
+                            <div className="p-3 reqAdmin-in" key={dt._id}>
                                 <p>Name: {name}</p>
                                 <p>Email: {email}</p>
                                 <p>Phone: {contact}</p>
@@ -53,7 +53,7 @@ const MakeAdmin = () => {
                                 <p>label: {label}</p>
                                 <p>semester :{semester}</p>
                                 <p>status: {status}</p>
-                                <button onClick={() => handleDelete(_id)}>Delete Req?</button>
+                                <button className="btn btn-outline-primary" onClick={() => handleDelete(_id)}>Delete Req?</button>
                             </div>
                         )
                     })

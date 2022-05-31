@@ -32,7 +32,7 @@ const Admin = () => {
             <div>
                 <div className="Admin-header d-flex flex-column justify-content-center align-items-center">
                     <h1> MANAGING-TEAM 🚀 </h1>
-                    <TabList id="myDIV" className="d-flex w-50 pt-5 justify-content-between">
+                    <TabList id="myDIV" className="d-flex w-50 pt-5 justify-content-between flex-wrap gap-3">
                         <Tab className="btn btn-outline-danger text-light active">ALL BLOOD REQUEST</Tab>
                         <Tab className="btn btn-outline-danger text-light ">MANAGEMENT TEAM</Tab>
                         <Tab className="btn btn-outline-danger text-light">MAKE A PART</Tab>

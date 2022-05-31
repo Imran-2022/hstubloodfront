@@ -50,6 +50,9 @@ const DataTable = () => {
         <div className='pb-5'>
             <div>
                 <p className="pt-3">the number of <span className="text-danger">TABLE DATA</span> : {data.length}</p>
+                <div  style={{overflowX:"auto"}}>
+
+               
                 <table>
                     <thead>
                         <tr>
@@ -97,6 +100,7 @@ const DataTable = () => {
                         }).reverse()
                     }
                 </table>
+                </div>
                 {
                     data.length ? <button className="btn btn-primary w-100 p-3 mt-5" onClick={deleteAllRequest}>Delete All done request</button> : <p></p>
                 }

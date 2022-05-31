@@ -28,11 +28,11 @@ const AllAdmin = () => {
 
     return (
         <div>
-            <small className=" text-primary d-flex flex-wrap gap-1 ">
+            <div className="reqAdmin ">
                 {
                     admin.map(admin => {
                         return (
-                            <div className="p-3 bg-dark m-5" key={admin._id}>
+                            <div className="p-3 reqAdmin-in" key={admin._id}>
                                 <p>Name: {admin.name}</p>
                                 <p>Email: {admin.email}</p>
                                 <p>Phone: {admin.contact}</p>
@@ -52,7 +52,7 @@ const AllAdmin = () => {
                     draggable
                     pauseOnHover
                 />
-            </small>
+            </div>
         </div>
     );
 };
