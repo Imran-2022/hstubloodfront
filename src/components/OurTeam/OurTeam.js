@@ -46,6 +46,14 @@ const OurTeam = () => {
                                 <p>HSTU Blood Share</p>
                             </div>
                         </div>
+                        <div>
+                            <img width="100%" src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg" alt="" />
+                            <div>
+                                <p>Mst. LOREM</p>
+                                <p>General Member </p>
+                                <p>HSTU Blood Share</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

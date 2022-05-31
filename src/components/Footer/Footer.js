@@ -41,7 +41,7 @@ const Footer = () => {
                     <div className="row">
                         <div className="col-xl-4 col-lg-4 mb-50">
                             <div className="footer-widget">
-                                <div className="footer-logo text-danger display-1">
+                                <div className="footer-logo display-1">
                                     HSTU
                                 </div>
                                 <div className="footer-text">

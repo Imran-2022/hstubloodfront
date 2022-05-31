@@ -59,8 +59,10 @@ ul {
 }
 .footer-logo {
   margin-bottom: 30px;
-  color: #00934d;
-  font-weight: bold;
+  /* color: #00934d; */
+  color: #dc3545;
+  font-weight: 800 !important;
+  font-family: roboto !important;
 }
 .footer-logo img {
     max-width: 200px;

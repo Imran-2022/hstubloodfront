@@ -84,7 +84,25 @@ const Donors = () => {
         navigator.clipboard.writeText(num.innerText);
         toast(`copied to clipboard`)
     };
-
+    const [loggedInUser, setLoggedInUser] = useContext(userContext)
+    const [validManage, setValidManage] = useState(false)
+    // const [admin, setAdmin] = useState([])
+    useEffect(() => {
+        setValidManage(false)
+        fetch('https://hstu-blood-share.herokuapp.com/managingTeam')
+            .then(response => response.json())
+            .then(data => {
+                for (var i = 0; i < data.length; ++i) {
+                    // data[i].email
+                    console.log(data[i].email)
+                    if (data[i].email == loggedInUser.email) {
+                        setValidManage(true)
+                        console.log(data[i].email, "included", loggedInUser.email)
+                    }
+                }
+            });
+    }, [loggedInUser])
+    console.log(validManage)
     const displayUsers = filterblood
         .slice(pagesVisited, pagesVisited + usersPerPage)
         .map((user) => {
@@ -97,7 +115,10 @@ const Donors = () => {
                     }
                     <div>
                         <p>Name : {Name}</p>
-                        <p>Phone Number : <span style={{ padding: "5px", background: "#ddd" }} >{mobile}</span></p>
+                        {
+                            validManage && <p>Phone Number : <span style={{ padding: "5px", background: "#ddd" }} >{mobile}</span></p>
+                        }
+                        
                         <ToastContainer
                             position="bottom-right"
                             autoClose={1000}
@@ -111,9 +132,17 @@ const Donors = () => {
                         />
                         <p>age : {age}</p>
                         <p>blood-Group : {bloodGroup}</p>
-                        <p>Depertment : {department}</p>
-                        <p>Label : {label} & Semester : {semester}</p>
-                        <p>lastDonateDate : {lastDonateDate ? lastDonateDate : "no"}</p>
+
+                        {
+                            validManage &&<p>Depertment : {department}</p>
+                        }
+                        {
+                            validManage &&<p>Label : {label} & Semester : {semester}</p>
+                        }
+                        {
+                            <p>lastDonateDate : {lastDonateDate ? lastDonateDate : "no"}</p>
+                        }
+                        
                     </div>
                 </div>
             );
