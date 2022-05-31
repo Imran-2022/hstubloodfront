@@ -58,5 +58,10 @@
   .home2{
     min-height: 100vh;
   }
+  .contactUSS{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
 }
