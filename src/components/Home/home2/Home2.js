@@ -6,7 +6,7 @@ const Home2 = () => {
     
     return (
         <>
-        <div className="home" style={{background:"#fff"}}>
+        <div className="home home2" style={{background:"#fff"}}>
             <div className="container text-center">
             <p className=" readingbooks h1 py-2">Why is <small style={{color:"red"}}>donating bloods</small> so important?</p>
             <blockquote  className="readingbooksp h4 my-5" cite="https://www.oberlo.com/blog/benefits-of-reading-books">

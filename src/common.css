@@ -25,3 +25,38 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #851b1b;
 }
+
+
+/* footer res */
+
+@media (max-width: 750px) {
+  .footer-widget img {
+    display: none;
+  }
+
+  .navTopp {
+    font-size: 12px;
+  }
+
+  .copyright-text p {
+    font-size: 12px !important;
+  }
+
+  .overlay-content p {
+    font-size: 20px !important;
+    margin: 20px;
+  }
+
+  .homeLink {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .navimage img{
+    height: 60px !important;
+  }
+  .home2{
+    min-height: 100vh;
+  }
+
+}

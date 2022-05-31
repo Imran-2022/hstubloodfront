@@ -14,7 +14,7 @@ const Home = () => {
                     <p>
                         DONATING BLOOD IS ONE OF THE NOBLEST <br /> THINGS YOU CAN DO.
                     </p>
-                    <div>
+                    <div className="homeLink">
                         <Link to="/donors"><button className="btn btn-primary me-3 px-5 py-2">Search Donar</button></Link>
                         <Link to="/donate"><button className="btn btn-primary px-5 py-2">Donate Blood</button></Link>
                     </div>

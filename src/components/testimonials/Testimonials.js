@@ -39,11 +39,6 @@ const Testimonials = () => {
                     <Card img="images/fakeFeMale.jpg" text="Every two seconds, someone in the U.S. requires a blood transfusion, according to the American Red Cross. The benefits of donating blood include helping people injured in accidents, undergoing cancer treatment, and battling blood diseases, among other reasons."name="RIFA" department="ECE"/>
 
                     <Card img="images/fakeMale.jpeg" text="You might not realize it, but by donating blood, you're essentially giving the gift of life to someone in need in your community. Blood donations are constantly needed to ensure that there's an ample fresh supply on hand to provide for those who need blood transfusions because of illness or injury."name="SADIK" department="EEE"/>
-
-                    <Card img="images/fakeFeMale.jpg" text="Type O negative red blood cells are considered the safest to give to anyone in a life-threatening emergency or when there's a limited supply of the exact matching blood type. That's because type O negative blood cells don't have antibodies to A, B or Rh antigens."name="LUMA" department="CSE"/>
-
-                    <Card img="images/fakeMale.jpeg" text="Blood donation is safe for healthy adults. There's no risk of contracting disease. New, sterile equipment is used for each donor. Some people may feel nauseous, lightheaded, or dizzy after donating blood."name="MANIK" department="ECE"/>
-
                 </Slider>
             </div>
         </div>
