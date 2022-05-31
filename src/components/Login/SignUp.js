@@ -28,7 +28,7 @@ const SignUp = () => {
                     setTimeout(() => {
                         navigate(-1)
 
-                    }, "1000")
+                    }, "2500")
                 })
                 .catch((error) => {
                     const errorMessage = error.message;
