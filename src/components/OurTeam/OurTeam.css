@@ -45,3 +45,6 @@
 .team-m >div>div{
     padding: 10px;
 }
+.team-m p{
+    margin: 0;
+}
