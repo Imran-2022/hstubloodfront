@@ -67,7 +67,7 @@ const DataTable = () => {
                             return (
                                 <tbody key={i}>
                                     <tr>
-                                        <td>{i + 1}</td>
+                                        <td>{you}</td>
                                         <td>{patient}</td>
                                         <td>{contact}</td>
                                         <td>{bloodGroup}</td>
