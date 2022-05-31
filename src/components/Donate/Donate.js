@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import "./Donate.css"
 import { useForm } from "react-hook-form";
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 import { userContext } from '../../Context/Context';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Donate = () => {
+    let navigate = useNavigate();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [profile, setProfile] = useState(false);
-
     const onSubmit = (data) => {
         axios.post('https://hstu-blood-share.herokuapp.com/donors', data)
             .then(res => {
@@ -16,6 +17,7 @@ const Donate = () => {
                     toast(`data added successfully !!!`)
                     setProfile(true)
                     reset()
+                    navigate("/user-profile")
                 }
             })
     };

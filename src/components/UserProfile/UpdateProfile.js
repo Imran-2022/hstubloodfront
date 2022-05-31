@@ -47,7 +47,7 @@ const UpdateProfile = () => {
     return (
         <div>
             <button className="btn btn-primary mx-5 mt-2 " onClick={() => navigate(-1)}>Go back</button>
-            <form className="form" onSubmit={handleSubmit(onSubmit)}>
+            <form className="form my-3 px-4" onSubmit={handleSubmit(onSubmit)}>
 
                 <input defaultValue={loggedInUser.displayName || "your Name"} {...register("Name")} autoComplete="off" readOnly />
                 {errors.Name && <p>This field is required</p>}
