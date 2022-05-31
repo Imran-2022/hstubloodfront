@@ -32,7 +32,7 @@ const Request = () => {
     }
     return (
         <div className="mt-5 mb-5 ">
-            <form ref={form} className="p-5 mb-5 rounded w-75 m-auto admin-form-adds admin-form-add d-flex flex-column justify-content-center align-content-center" onSubmit={handleSubmit(onSubmit)}>
+            <form ref={form} className="p-form mb-5 rounded w-75 m-auto admin-form-adds admin-form-add d-flex flex-column justify-content-center align-content-center" onSubmit={handleSubmit(onSubmit)}>
                 <input defaultValue={loggedInUser.displayName || "your Name"} readOnly  {...register("you", { required: true })} />
                 {errors.you && <small className="text-end">This field is required</small>}
 
@@ -57,7 +57,7 @@ const Request = () => {
                 </select>
                 <input hidden defaultValue={"pending"} {...register("status", { required: true })} readOnly />
                 {errors.status && <small className="text-end">This field is required</small>}
-                <input type="submit" value="Submit your Request" className="fs-5 p-3 rounded fw-bold" />
+                <input type="submit" value="Request" className="fs-5 p-3 rounded fw-bold" />
             </form>
             <ToastContainer
                 position="top-center"

@@ -29,6 +29,10 @@
 
 /* footer res */
 
+.p-form {
+  padding: 30px;
+}
+
 @media (max-width: 750px) {
   .footer-widget img {
     display: none;
@@ -52,16 +56,22 @@
     flex-direction: column;
     gap: 10px;
   }
-  .navimage img{
+
+  .navimage img {
     height: 60px !important;
   }
-  .home2{
+
+  .home2 {
     min-height: 100vh;
   }
-  .contactUSS{
+
+  .contactUSS {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
 
+  .p-form {
+    padding: 10px;
+  }
 }

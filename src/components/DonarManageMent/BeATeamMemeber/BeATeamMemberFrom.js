@@ -21,7 +21,8 @@ const BeATeamMemberFrom = () => {
     return (
         <div>
             <div className="mt-5 mb-5 ">
-                <form className="p-5 mb-5 rounded  w-75 m-auto admin-form-addd d-flex flex-column justify-content-center align-content-center" onSubmit={handleSubmit(onSubmit)}>
+                <p className="text-center">BE A PART OF US ?</p>
+                <form className="p-form mb-5 rounded  w-75 m-auto admin-form-addd d-flex flex-column justify-content-center align-content-center" onSubmit={handleSubmit(onSubmit)}>
                     <input type="text" defaultValue={loggedInUser.displayName}    {...register("name", { required: true })} autoComplete="off" readOnly />
                     {errors.name && <small className="text-end">This field is required</small>}
 
@@ -49,7 +50,7 @@ const BeATeamMemberFrom = () => {
                     </div>
                     <input hidden defaultValue={"pending"} {...register("status", { required: true })} readOnly />
                     {errors.status && <small className="text-end">This field is required</small>}
-                    <input type="submit" value="BE A PART OF US ?" className="fs-5 p-3 rounded fw-bold" />
+                    <input type="submit" value="request" className="fs-5 p-3 rounded fw-bold" />
                 </form>
                 <ToastContainer
                     position="top-center"
