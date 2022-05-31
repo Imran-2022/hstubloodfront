@@ -33,27 +33,35 @@ const UserProfile = () => {
     }
 
     return (
-        <>
-            <div className="userProfile">
-                <p>user Profile</p>
+        <div className="userhere">
+            <div className="userProfile my-4">
+                <p className='text-center display-5'>Donor's  Profile</p>
                 {
                     profile.length ? profile.map((data, i) => {
                         const { Name, age, bloodGroup, department, email, gender, label, mobile, semester, _id, lastDonateDate } = data;
                         return (
-                            <div key={i}>
-                                <p>Name :{Name}</p>
-                                <p>Age :{age}</p>
-                                <p>mobile :{mobile}</p>
-                                <p>BloodGroup :{bloodGroup}</p>
-                                <p>department :{department}</p>
-                                <p>email :{email}</p>
-                                <p>gender :{gender}</p>
-                                <p>label :{label}</p>
-                                <p>mobile :{label}</p>
-                                <p>semester :{semester}</p>
-                                <p>lastDonateDate :{lastDonateDate}</p>
-                                <button className="btn btn-primary" onClick={() => handleDelete(_id)}>remove profile</button>
-                                <Link className="btn btn-primary" to={`/update-profile/${_id}`}>Update Profile ?</Link>
+                            <div key={i} className="userInfoAll p-3 mx-2">
+                                <div className='userInfoAll-in'>
+                                    <div>
+                                        <p>Name :{Name}</p>
+                                        <p>Age :{age}</p>
+                                        <p>mobile :{mobile}</p>
+                                        <p>BloodGroup :{bloodGroup}</p>
+                                        <p>lastDonateDate :{lastDonateDate}</p>
+
+                                    </div>
+                                    <div>
+                                        <p>department :{department}</p>
+                                        <p>email :{email}</p>
+                                        <p>gender :{gender}</p>
+                                        <p>label :{label}</p>
+                                        <p>semester :{semester}</p>
+                                    </div>
+                                </div>
+                                <div className='d-flex gap-3 flex-wrap justify-content-center'>
+                                    <button className="btn btn-primary" onClick={() => handleDelete(_id)}>remove profile</button>
+                                    <Link className="btn btn-primary" to={`/update-profile/${_id}`}>Update Profile ?</Link>
+                                </div>
 
                             </div>
 
@@ -74,7 +82,7 @@ const UserProfile = () => {
 
             </div>
             <BeATeamMemberFrom />
-        </>
+        </div>
     );
 };
 

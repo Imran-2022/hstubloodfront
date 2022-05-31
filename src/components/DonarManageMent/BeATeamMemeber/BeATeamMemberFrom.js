@@ -21,8 +21,8 @@ const BeATeamMemberFrom = () => {
     return (
         <div>
             <div className="mt-5 mb-5 ">
-                <p className="text-center">BE A PART OF US ?</p>
-                <form className="p-form mb-5 rounded  ww-75 m-auto admin-form-addd d-flex flex-column justify-content-center align-content-center" onSubmit={handleSubmit(onSubmit)}>
+                <p className="text-center display-6">BE A PART OF MANAGEMENT TEAM?</p>
+                <form className="p-form mb-5 rounded  wu-75 m-auto admin-form-addd d-flex flex-column justify-content-center align-content-center" onSubmit={handleSubmit(onSubmit)}>
                     <input type="text" defaultValue={loggedInUser.displayName}    {...register("name", { required: true })} autoComplete="off" readOnly />
                     {errors.name && <small className="text-end">This field is required</small>}
 

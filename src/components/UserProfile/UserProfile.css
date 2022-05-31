@@ -1,8 +1,25 @@
-.userProfile {
-    min-height: 50vh;
-    width: 90%;
-    margin: auto;
+.userInfoAll{
+   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+.userInfoAll-in{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 
-
-/* react popup */
+}
+.userhere{
+    min-height: 90vh;
+    width: 90%;
+    margin: auto !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap:10px;
+    justify-content: center;
+    align-items: center;
+}

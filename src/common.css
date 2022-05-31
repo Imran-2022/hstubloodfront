@@ -35,6 +35,7 @@
 .ww-75{
   width: 55% !important;
 }
+
 .www-75{
   width: 80% !important;
 }
@@ -84,5 +85,8 @@
   }
   .www-75{
     width: 90% !important;
+  }
+  .wu-75{
+    width:90% ;
   }
 }
