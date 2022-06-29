@@ -1,7 +1,7 @@
 # CHAMPION PROJECT OF PROJECT EXHIBITION 2.0(ORGANIZED BY ECE CLUB OF HSTU).
-######  DETAILS IN VIDEO - (https://youtu.be/yL0t8ZO-tLY)
 
-##### [BLOOD | HSTU (MERN WEB)](https://blood-hstu.netlify.app/)
+
+##### [BLOOD | HSTU (MERN WEB)](https://hstubloodshare.netlify.app/)
 
 ## TECHNOLOGIES 
 ##### FRONTEND 
