@@ -11,7 +11,7 @@ const Sidebar = ({ isopen, toggle }) => {
     // const [admin, setAdmin] = useState([])
     useEffect(() => {
         setValidManage(false)
-        fetch('https://hstu-blood-share.herokuapp.com/managingTeam')
+        fetch('https://hstu-blood-share-backend.onrender.com/managingTeam')
             .then(response => response.json())
             .then(data => {
                 for (var i = 0; i < data.length; ++i) {
@@ -38,7 +38,7 @@ const Sidebar = ({ isopen, toggle }) => {
             </div>
             <div className="sidebar-wrapper">
                 <div className="sidebar-menu">
-                <Link className="nav-link text-light" to="/donors-request">REQUEST</Link>
+                    <Link className="nav-link text-light" to="/donors-request">REQUEST</Link>
                     <Link className="nav-link text-light" to="/donors">DONORS</Link>
                     <Link className="nav-link text-light" to="/donate">DONATE</Link>
                     {loggedInUser.email ? <> <Link className="nav-link text-light" to="/user-profile">{loggedInUser.displayName.toUpperCase()}</Link> <Link className="nav-link text-light" to="/sign-in" onClick={() => setLoggedInUser({})}>SIGN-OUT</Link></> : <Link className="nav-link text-light" to="/sign-in">SIGN-IN</Link>}

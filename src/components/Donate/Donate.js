@@ -13,7 +13,7 @@ const Donate = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [profile, setProfile] = useState(false);
     const onSubmit = (data) => {
-        axios.post('https://hstu-blood-share.herokuapp.com/donors', data)
+        axios.post('https://hstu-blood-share-backend.onrender.com/donors', data)
             .then(res => {
                 if (res.data) {
                     toast(`data added successfully !!!`)
@@ -29,7 +29,7 @@ const Donate = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const res = await fetch("https://hstu-blood-share.herokuapp.com/donors");
+            const res = await fetch("https://hstu-blood-share-backend.onrender.com/donors");
             const record = await res.json();
             setDonors(record)
             const user = record.filter(dt => dt.email === loggedInUser.email)
@@ -85,11 +85,11 @@ const Donate = () => {
                 <input className="form-number-mobile" type='date' {...register("lastDonateDate")} />
                 {errors.lastDonateDate && <p>This field is required</p>}
                 {
-                    donors.length>4 ? <div>
+                    donors.length > 4 ? <div>
                         {
                             profile ? <input className="my-3" type="submit" value="ALREADY HAVE A REQUEST" disabled={true} /> : <input className="my-3" type="submit" value="REQUEST TO DONATE" />
                         }
-                    </div>:<div>
+                    </div> : <div>
                         <p className='text-center'>button loading !!</p>
                     </div>
                 }

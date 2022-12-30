@@ -10,7 +10,7 @@ const Navbar = ({ toggle }) => {
     // const [admin, setAdmin] = useState([])
     useEffect(() => {
         setValidManage(false)
-        fetch('https://hstu-blood-share.herokuapp.com/managingTeam')
+        fetch('https://hstu-blood-share-backend.onrender.com/managingTeam')
             .then(response => response.json())
             .then(data => {
                 for (var i = 0; i < data.length; ++i) {
@@ -26,8 +26,7 @@ const Navbar = ({ toggle }) => {
     console.log(validManage)
     return (
         <nav>
-            {/* <Link className="nav-link text-light" style={{ fontSize: "25px" }} to="/">HSTU'<span style={{ color: "rgb(255 211 0)", padding: "2px", fontWeight: "bolder" }}>blood</span>Share</Link> */}
-            <Link className="nav-link navimage text-light" to="/"><img style={{height: "80px",width:"100%"}}src="images/A1.png" alt="" /></Link>
+            <Link className="nav-link text-light" style={{ fontSize: "25px" }} to="/">HSTU'<span style={{ color: "rgb(255 211 0)", padding: "2px", fontWeight: "bolder" }}>blood</span>Share</Link>
             <div className="icons">
                 <div className="menu-items">
                     <Link className="nav-link text-light" to="/donors-request">REQUEST</Link>

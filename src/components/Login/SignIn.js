@@ -58,7 +58,7 @@ const SignIn = () => {
                     <h3>Sign In</h3>
                     <div className="form-group">
                         <label>Email address</label>
-                        <input ref={userEmail} type="email" className="form-control" placeholder="Enter email" autoFocus={true} />
+                        <input ref={userEmail} type="email" className="form-control" placeholder="Enter email" />
                     </div>
                     <div className="form-group mb-2">
                         <label>Password</label>

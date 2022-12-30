@@ -10,13 +10,12 @@ import { userContext } from "../../Context/Context";
 import { Button, Spinner } from "react-bootstrap";
 
 const Donors = () => {
-
     const [donors, setDonors] = useState([]);
     const [filterblood, setFilterBlood] = useState([])
     // data from backend 
     useEffect(() => {
         async function fetchData() {
-            const res = await fetch("https://hstu-blood-share.herokuapp.com/donors");
+            const res = await fetch("https://hstu-blood-share-backend.onrender.com/donors");
             const record = await res.json();
             // setDonors(record.reverse())
 
@@ -90,7 +89,7 @@ const Donors = () => {
     // const [admin, setAdmin] = useState([])
     useEffect(() => {
         setValidManage(false)
-        fetch('https://hstu-blood-share.herokuapp.com/managingTeam')
+        fetch('https://hstu-blood-share-backend.onrender.com/managingTeam')
             .then(response => response.json())
             .then(data => {
                 for (var i = 0; i < data.length; ++i) {
@@ -108,7 +107,7 @@ const Donors = () => {
 
 
     const handleDelete = (id) => {
-        fetch(`https://hstu-blood-share.herokuapp.com/donors/${id}`, {
+        fetch(`https://hstu-blood-share-backend.onrender.com/donors/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())// or res.text()) 

@@ -92,13 +92,13 @@ const Footer = () => {
                     <div className="row">
                         <div className="col-xl-6 col-lg-6 text-center text-lg-left">
                             <div className="copyright-text">
-                                <p className='text-light'>&copy; 2021 - {year} , Copyright & All Rights Reserved by<strong > ( NOOB 1.0) </strong></p>
+                                <p className='text-light'>&copy; 2021 - {year} , Copyright & All Rights Reserved by<strong > ( HstuBloodShare) </strong></p>
                             </div>
                         </div>
                         <div className="col-xl-6 col-lg-6 d-none d-lg-block text-center">
                             <div className="footer-menu">
                                 <ul>
-                                    <li><a className='text-light' target="_blank" rel="noreferrer"href="https://www.linkedin.com/in/md-imranul-haque/">CREATED BY @ NOOB 1.0 </a></li>
+                                    <li><a className='text-light' target="_blank" rel="noreferrer"href="https://www.linkedin.com/in/md-imranul-haque/">CREATED BY @ Md-Imranul-Haque </a></li>
                                 </ul>
                             </div>
                         </div>

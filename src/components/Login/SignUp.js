@@ -61,7 +61,7 @@ const SignUp = () => {
                     <h3>Sign Up</h3>
                     <div className="form-group">
                         <label>Your Name</label>
-                        <input ref={userName} type="text" className="form-control" placeholder="Enter name" autoFocus={true} />
+                        <input ref={userName} type="text" className="form-control" placeholder="Enter name" />
                     </div>
                     <div className="form-group">
                         <label>Email address</label>

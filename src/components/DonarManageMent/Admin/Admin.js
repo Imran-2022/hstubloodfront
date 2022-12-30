@@ -12,7 +12,7 @@ const Admin = () => {
     const [validManage, setValidManage] = useState(false)
     // const [admin, setAdmin] = useState([])
     useEffect(() => {
-        fetch('https://hstu-blood-share.herokuapp.com/managingTeam')
+        fetch('https://hstu-blood-share-backend.onrender.com/managingTeam')
             .then(response => response.json())
             .then(data => {
                 for (var i = 0; i < data.length; ++i) {

@@ -3,17 +3,17 @@ import "./AllAdmin.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const AllAdmin = () => {
-
+    // https://hstu-blood-share-backend.onrender.com
     const [admin, setAdmin] = useState([])
     useEffect(() => {
-        fetch('https://hstu-blood-share.herokuapp.com/managingTeam')
+        fetch('https://hstu-blood-share-backend.onrender.com/managingTeam')
             .then(response => response.json())
             .then(data => setAdmin(data));
     }, [])
 
 
     const handleDelete = (id) => {
-        fetch(`https://hstu-blood-share.herokuapp.com/managingTeam/${id}`, {
+        fetch(`https://hstu-blood-share-backend.onrender.com/managingTeam/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())// or res.text()) 
