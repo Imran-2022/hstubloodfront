@@ -15,15 +15,12 @@ const Navbar = ({ toggle }) => {
             .then(data => {
                 for (var i = 0; i < data.length; ++i) {
                     // data[i].email
-                    console.log(data[i].email)
                     if (data[i].email == loggedInUser.email) {
                         setValidManage(true)
-                        console.log(data[i].email, "included", loggedInUser.email)
                     }
                 }
             });
     }, [loggedInUser])
-    console.log(validManage)
     return (
         <nav>
             <Link className="nav-link text-light" style={{ fontSize: "25px" }} to="/">HSTU'<span style={{ color: "rgb(255 211 0)", padding: "2px", fontWeight: "bolder" }}>blood</span>Share</Link>

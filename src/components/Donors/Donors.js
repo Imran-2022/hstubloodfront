@@ -94,17 +94,12 @@ const Donors = () => {
             .then(data => {
                 for (var i = 0; i < data.length; ++i) {
                     // data[i].email
-                    console.log(data[i].email)
                     if (data[i].email == loggedInUser.email) {
                         setValidManage(true)
-                        console.log(data[i].email, "included", loggedInUser.email)
                     }
                 }
             });
     }, [loggedInUser])
-    console.log(validManage)
-
-
 
     const handleDelete = (id) => {
         fetch(`https://hstu-blood-share-backend.onrender.com/donors/${id}`, {
